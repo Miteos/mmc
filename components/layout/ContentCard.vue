@@ -6,13 +6,19 @@
 
 <style lang="scss">
   .content-card{
-    display: flex;
-    margin: 40px 0 0 0;
+    display: flex !important;
+    margin: 80px 0 0 0;
     background-color: white;
+    border:1px solid #0092C8;
     border-radius: 10px;
-    max-height: 500px;
     min-height: 400px;
     width: 100%;
+    transition: 0.2s ease-in-out;
+      &:hover{
+        box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+        background-color: #0092C8;
+        color: white;
+      }
   }
 
 </style>

@@ -66,7 +66,7 @@
     margin: 0 3rem;
     position: relative;
     letter-spacing: 2px;
-    color:black;
+    color:black !important;
   }
 
   nav ul li a:last-child{

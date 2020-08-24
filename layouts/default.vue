@@ -1,8 +1,10 @@
 <template>
-  <div class="main-background">
+  <v-app>
+    <v-content>
     <navbar/>
     <Nuxt />
-  </div>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -18,7 +20,7 @@ import NavBar from '@/components/NavBar'
 
 <style lang="scss" scoped>
   .main-background{
-    background-color:#0092C8;
+    /*background-color:#0092C8;*/
     display: flex;
     flex-direction: column;
     align-items: center;
