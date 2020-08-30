@@ -3,17 +3,67 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: 'Circular';
+  src: url('~assets/fonts/Circular-Black.woff2')format('woff2'), url('~assets/fonts/Circular-Black.eot')format('eot');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circular';
+  src: url('~assets/fonts/Circular-Medium.woff2') format('woff2'), url('~assets/fonts/Circular-Medium.eot') format('eot');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circular';
+  src: url('~assets/fonts/Circular-Book.woff2') format('woff2'), url('~assets/fonts/Circular-Book.eot') format('eot');
+  font-weight: 100;
+  font-style: normal;
+}
+@-moz-document url-prefix() {
+  @font-face {
+    font-family: 'Circular';
+    font-display: auto;
+    src: url('~assets/fonts/SF-UI-Display-Black.otf');
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Circular';
+    font-display: auto;
+    src: url('~assets/fonts/SF-UI-Display-Regular.otf');
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Circular';
+    font-display: auto;
+    src: url('~assets/fonts/sf-ui-display-medium.woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+.v-application {
+  font-family: Circular, Arial, Helvetica, sans-serif !important;
+}
 html{
   font-size: 14px;
   font-family: "Roboto Cn", sans-serif;
   color: black;
   background-color: white;
 }
-body{
+
+body {
+  font-family: Circular, Verdana;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: ltr;
+  color: #333;
+  text-align: left;
   height:100%;
 }
-
 a{
   text-decoration: none;
   color: black;

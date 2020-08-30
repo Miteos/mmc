@@ -1,18 +1,21 @@
 <template>
   <v-app>
-    <v-main>
-    <navbar/>
-    <Nuxt />
+    <v-main class="background-image">
+      <navbar/>
+       <Nuxt />
     </v-main>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar'
+import Footer from '@/components/Footer'
 
   export default {
   components:{
-    'navbar': NavBar
+    'navbar': NavBar,
+    Footer
   }
 
 }
@@ -24,5 +27,13 @@ import NavBar from '@/components/NavBar'
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .background-image{
+    width: 100%;
+    background-image: url("~static/images/dust.png");
+    background-size: cover;
+    background-size: 100% 20%;
+    background-position: center;
+    background-repeat: repeat;
   }
 </style>

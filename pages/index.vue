@@ -3,7 +3,7 @@
     <div class="img-container">
       <img class="hero-img" src="@/static/images/hero2.jpg" alt="hero" />
     </div>
-  <v-container>
+  <v-container >
     <div class="two-card-grid">
       <content-card>
         <template #content>
@@ -65,6 +65,52 @@
       </content-card>
     </div>
     <slider></slider>
+    <div class="d-flex justify-center">
+      <h1 class="section-header">
+        Kontaktirajte nas:
+      </h1>
+    </div>
+    <v-card class="contact_info rounded">
+      <v-list >
+        <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Kontakt</v-list-item-title>
+        <v-list-item class="pt-5 pb-4">Kontakt broj</v-list-item>
+        <v-list-item>
+          <v-btn large dark color="secondary">
+            <v-icon class="pr-2">
+              perm_phone_msg
+            </v-icon>
+            032 524 119
+          </v-btn>
+        </v-list-item>
+           <v-list-item class="pt-8 pb-4">Kontakt e-mail</v-list-item>
+        <v-list-item>
+          <v-btn large dark color="secondary">
+            <v-icon class="pr-2">
+              mail_outline
+            </v-icon>             mail@randommail.com
+          </v-btn>
+        </v-list-item>
+     </v-list>
+      <v-list>
+          <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Adresa</v-list-item-title>
+          <v-list>
+            <v-list-item class="pt-4 ">
+              <span>Ul.Josipa Jurja Strossmayera 21 </span>
+            </v-list-item>
+            <v-list-item>
+              <span>32000, Vukovar </span>
+            </v-list-item>
+            <v-list-item>
+              <span>Hrvatska </span>
+            </v-list-item>
+          </v-list>
+      </v-list>
+      <v-list style="width: 100%">
+        <v-list-item>
+          <google-map></google-map>
+        </v-list-item>
+      </v-list>
+    </v-card>
     </v-container>
   </div>
 </template>
@@ -96,28 +142,18 @@
 </script>
 
 <style lang="scss">
-  .carousel{
-    display: flex;
-    margin-top: 30px;
-    background-color: #7f828b;
-    align-content: center !important;
-    margin-bottom: 80px;
-    & .content-card{
-     margin: auto;
-      width: 90% !important;
-      max-width: 100%;
-      display: flex !important;
-      margin-top: 80px;
-      border: none;
-      max-height: none !important;
-    }
+  @import '@/assets/styles/colors.scss';
 
+  .section-header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
   }
-  .slick-slider{
-    width: 100%;
-  }
-  .slick-dots{
-    position: relative;
+  .contact_info{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr  3fr;
   }
   .hero-img{
     height: 100%;
