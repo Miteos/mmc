@@ -34,11 +34,6 @@
     <div class="main-content-container">
       <content-card>
         <template #content>
-          <google-map></google-map>
-        </template>
-      </content-card>
-      <content-card>
-        <template #content>
           <div class="card-inner">
             <div style="width: 50%" class="text-card-inner">
               <h2>Kontakt?</h2>
@@ -73,7 +68,7 @@
     <v-card class="contact_info rounded">
       <v-list >
         <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Kontakt</v-list-item-title>
-        <v-list-item class="pt-5 pb-4">Kontakt broj</v-list-item>
+        <v-list-item class="pt-5 pb-4"><span>Kontakt broj</span></v-list-item>
         <v-list-item>
           <v-btn large dark color="secondary">
             <v-icon class="pr-2">
@@ -82,7 +77,7 @@
             032 524 119
           </v-btn>
         </v-list-item>
-           <v-list-item class="pt-8 pb-4">Kontakt e-mail</v-list-item>
+        <v-list-item class="pt-8 pb-4"><span>Kontakt e-mail</span></v-list-item>
         <v-list-item>
           <v-btn large dark color="secondary">
             <v-icon class="pr-2">
