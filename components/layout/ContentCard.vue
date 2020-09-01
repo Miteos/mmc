@@ -7,17 +7,14 @@
 <style lang="scss">
   .content-card{
     display: flex !important;
-    margin: 80px 0 0 0;
-    background-color: white;
-    border:1px solid #0092C8;
-    border-radius: 10px;
-    min-height: 400px;
+    margin: 80px 0;
     width: 100%;
-    transition: 0.2s ease-in-out;
+    background-color: rgb(255 255 255);
+    transition:  0.2s ease-in;
+    border-radius: 10px;
       &:hover{
-        box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
-        background-color: #0092C8;
-        color: white;
+        box-shadow: 0 20px 80px 0 rgba(0,0,0,.05) !important;
+        border-radius: 10px;
       }
   }
 

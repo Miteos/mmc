@@ -4,110 +4,110 @@
       <img class="hero-img" src="@/static/images/hero2.jpg" alt="hero" />
     </div>
   <v-container >
-    <div class="two-card-grid">
+    <div class="four-box-grid">
+      <v-card v-for="c in cards" class="cards-info" :key="cards.title">
+        <v-icon x-large>{{c.icon}}</v-icon>
+        <h1>{{c.title}}</h1>
+      </v-card>
+    </div>
+  </v-container>
+    <div class="grey-background">
+      <span>Tvrtke</span>
+    </div>
+    <v-container>
       <content-card>
         <template #content>
           <div class="card-inner">
-              <div class="img-card-inner"></div>
+              <div class="img-card-inner">
+                <img src="@/static/images/landing/landing3.jpg">
+              </div>
             <div class="text-card-inner">
-              <h2>Neki title</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <p>Nudimo vam učinkovita rješenja za sva kadrovska pitanja i upravljanje kadrovima. Sa svojom stručnošću u medicinskom i skrbničkom sektoru , pioniri smo u svojoj industriji.</p>
+              <p>Uz Certifikat Licece , mi smo prvi i za sada jedina agencija za zapošljavanje u Hrvatskoj sa službenom agencijskom licencom . </p>
+               <p> Zahvaljujući sofisticiranim mrežama u cijeloj Europi,
+                naša baza podataka trenutno sadrži preko 60000 odgovarajućih profila
+                podnositelja zahtjeva za zdravstveni sektor, koji se mogu fleksibilno koristiti i odmah su dostupni .</p>
             </div>
           </div>
         </template>
       </content-card>
-      <content-card>
-        <template #content>
-          <div class="card-inner">
-            <div style="width: 100%" class="text-card-inner">
-              <h2>Neki title</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-          </div>
-        </template>
-      </content-card>
-    </div>
-    <div class="main-content-container">
-      <content-card>
-        <template #content>
-          <div class="card-inner">
-            <div style="width: 50%" class="text-card-inner">
-              <h2>Kontakt?</h2>
-              <p>Lorem Ipsum is simply dummy rinter took a galley of type and scrambled it to make a type specimen book.
-             Lorem Ipsum is secimen book.
-             Lorem Ipsum ian unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            <div style="width: 50%" class="text-card-inner">
-              <h2>Kontakt?</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-            <div style="width: 50%" class="text-card-inner">
-              <h2>Kontakt?</h2>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </div>
-        </template>
-      </content-card>
-    </div>
-    <slider></slider>
-    <div class="d-flex justify-center">
-      <h1 class="section-header">
-        Kontaktirajte nas:
-      </h1>
-    </div>
-    <v-card class="contact_info rounded">
-      <v-list >
-        <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Kontakt</v-list-item-title>
-        <v-list-item class="pt-5 pb-4"><span>Kontakt broj</span></v-list-item>
-        <v-list-item>
-          <v-btn large dark color="secondary">
-            <v-icon class="pr-2">
-              perm_phone_msg
-            </v-icon>
-            032 524 119
-          </v-btn>
-        </v-list-item>
-        <v-list-item class="pt-8 pb-4"><span>Kontakt e-mail</span></v-list-item>
-        <v-list-item>
-          <v-btn large dark color="secondary">
-            <v-icon class="pr-2">
-              mail_outline
-            </v-icon>             mail@randommail.com
-          </v-btn>
-        </v-list-item>
-     </v-list>
-      <v-list>
-          <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Adresa</v-list-item-title>
-          <v-list>
-            <v-list-item class="pt-4 ">
-              <span>Ul.Josipa Jurja Strossmayera 21 </span>
-            </v-list-item>
-            <v-list-item>
-              <span>32000, Vukovar </span>
-            </v-list-item>
-            <v-list-item>
-              <span>Hrvatska </span>
-            </v-list-item>
-          </v-list>
-      </v-list>
-      <v-list style="width: 100%">
-        <v-list-item>
-          <google-map></google-map>
-        </v-list-item>
-      </v-list>
-    </v-card>
     </v-container>
-  </div>
+    <div class="grey-background">
+      <span>Kandidati</span>
+    </div>
+    <v-container>
+        <content-card>
+          <template #content>
+              <div class="text-card-inner">
+                <p>Tražite li novi izazov u Europi i želite profesionalnu podršku od samog početka?</p>
+                <p>Od prvog razgovora za ići na uspješnom s posredovanja, naši stručnjaci su uvijek pri ruci. </p>
+                  <p>Uz našu sveobuhvatnu podršku ,
+                  pratimo vas na putu do posla iz snova u najpoznatijim klinikama i institucijama u Europi.</p>
+                <p>Pozovite nas da stvorimo smislen profil s našim stručnjacima.</p>
+              </div>
+            <div class="card-inner">
+              <div class="img-card-inner">
+                <img src="@/static/images/landing/landing1.jpg">
+              </div>
+            </div>
+          </template>
+        </content-card>
+    </v-container>
+    <div class="grey-background">
+      <span>Iskustva korisnika</span>
+    </div>
+    <v-container>
+    <slider></slider>
+    </v-container>
+      <div class="grey-background">
+        <span>Kontakt</span>
+      </div>
+      <v-container>
+        <v-card class="rounded elevation-0">
+          <div class="contact_info ">
+            <v-list class="" >
+              <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Kontakt</v-list-item-title>
+              <v-list-item class="pt-5 pb-4"><span>Kontakt broj</span></v-list-item>
+              <v-list-item>
+                <v-btn large dark color="primary">
+                  <v-icon class="pr-2">
+                    perm_phone_msg
+                  </v-icon>
+                  032 524 119
+                </v-btn>
+              </v-list-item>
+              <v-list-item class="pt-8 pb-4"><span>Kontakt e-mail</span></v-list-item>
+              <v-list-item>
+                <v-btn large dark color="primary">
+                  <v-icon class="pr-2">
+                    mail_outline
+                  </v-icon>             mail@randommail.com
+                </v-btn>
+              </v-list-item>
+            </v-list>
+            <v-list class="">
+              <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Adresa</v-list-item-title>
+              <v-list class="">
+                <v-list-item class="pt-4 ">
+                  <span>Ul.Josipa Jurja Strossmayera 21 </span>
+                </v-list-item>
+                <v-list-item>
+                  <span>32000, Vukovar </span>
+                </v-list-item>
+                <v-list-item>
+                  <span>Hrvatska </span>
+                </v-list-item>
+              </v-list>
+            </v-list>
+            <v-list class="" style="width: 100%">
+              <v-list-item>
+                <google-map></google-map>
+              </v-list-item>
+            </v-list>
+          </div>
+        </v-card>
+      </v-container>
+    </div>
 </template>
 
 <script>
@@ -131,6 +131,13 @@
           autoplay:true,
           pauseOnFocus:true
         },
+        cards:[
+          {title: 'Tvrtke', icon:'perm_phone_msg'},
+          {title: 'Kandidati', icon:'perm_phone_msg'},
+          {title: 'Iskustva', icon:'perm_phone_msg'},
+          {title: 'Kontakt', icon:'perm_phone_msg'}
+        ]
+
       }
     }
   }
@@ -139,11 +146,16 @@
 <style lang="scss">
   @import '@/assets/styles/colors.scss';
 
+  .four-box-grid{
+    display: grid;
+    width: 100%;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
+  }
   .section-header{
     padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid black;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
   .contact_info{
     display: grid;
@@ -164,26 +176,35 @@
     flex-direction: column;
     align-items: center;
     text-align: left;
+    justify-content: center;
     padding: 20px;
     width: 60%;
-    & h2 {
+    & h1 {
       padding-bottom: 20px;
     }
     & p {
       padding-bottom: 10px;
+      text-align: left;
+      padding-left: 50px;
+      padding-right: 20px;
+      width: 100%;
+      font-size: 18px;
     }
 
   }
   .img-card-inner{
     display: flex;
-    border:1px solid #0092C8;
+    height: 325px;
     border-radius: 10px;
-    height: 100%;
-    width: 300px;
+    & img{
+      height: 325px;
+      width: auto;
+      border-radius: 10px;
+    }
   }
   .two-card-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap:40px;
   }
   .img-container{
@@ -198,5 +219,24 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+  .cards-info{
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    border-radius: 10px !important;
+    border: 1px solid rgb(244 245 248) !important;
+    box-shadow: none !important;
+    background-color: rgb(255 255 255);
+    transition:  0.2s ease-in;
+    & h1{
+      padding: 20px;
+    }
+  }
+  .cards-info:hover{
+    box-shadow: 0 20px 80px 0 rgba(0,0,0,.05) !important;
+    cursor: pointer;
   }
 </style>

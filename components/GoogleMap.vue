@@ -19,7 +19,8 @@
   display: block;
   width: 100%;
   height: 400px;
-  padding:20px
+  padding:20px;
+
 }
 
 </style>

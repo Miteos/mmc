@@ -23,17 +23,17 @@ import Footer from '@/components/Footer'
 
 <style lang="scss" scoped>
   .main-background{
-    /*background-color:#0092C8;*/
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .background-image{
     width: 100%;
-    background-image: url("~static/images/dust.png");
-    background-size: cover;
-    background-size: 100% 20%;
-    background-position: center;
-    background-repeat: repeat;
+    background-color:white;
+    /*background-image: url("~static/images/dust.png");*/
+    /*background-size: cover;*/
+    /*background-size: 100% 20%;*/
+    /*background-position: center;*/
+    /*background-repeat: repeat;*/
   }
 </style>

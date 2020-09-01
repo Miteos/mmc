@@ -66,7 +66,6 @@
   .carousel{
     display: flex;
     margin-top: 30px;
-    background-color: #7f828b;
     align-content: center !important;
     margin-bottom: 80px;
     & .content-card{
