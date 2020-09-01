@@ -1,2 +1,14 @@
 $mainColor: #0092C8;
 $secondaryColor: #77BE43;
+
+.grey-background{
+  background: rgb(241 241 241) !important;
+  display: block;
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 20px;
+  & span{
+    text-align: center;
+    font-size: 51px;
+  }
+}
