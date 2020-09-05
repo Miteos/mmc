@@ -3,34 +3,12 @@
   <slider  v-bind="settings">
     <div class="content-card">
       <div class="card-inner">
-        <div class="img-card-inner"></div>
-        <div class="text-card-inner">
-          <h2>Neki title</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <div class="slider-img">
+          <img src="@/static/images/landing/landing1.jpg">
         </div>
-      </div>
-    </div>
-    <div class="content-card">
-      <div class="card-inner">
-        <div class="img-card-inner"></div>
-        <div class="text-card-inner">
-          <h2>Neki title</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div>
-      </div>
-    </div>
-    <div class="content-card" >
-      <div class="card-inner">
-        <div class="img-card-inner"></div>
-        <div class="text-card-inner">
-          <h2>Neki title</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <div class="slider-text">
+          <h2>Pero Perić</h2>
+          <p>Odlična usluga</p>
         </div>
       </div>
     </div>
@@ -57,6 +35,9 @@
           autoplay:true,
           pauseOnFocus:true
         },
+        slidesInfo:[
+          {name:'Pero perić'}
+        ]
       }
     }
   }
@@ -76,6 +57,10 @@
       margin-top: 80px;
       border: none;
       max-height: none !important;
+      & .slider-img{
+        max-height: 150px;
+       width: 50px;
+      }
     }
 
   }

@@ -2,26 +2,51 @@
   <v-footer
     dark
     padless
+    style="background-color: black"
   >
+    <v-container>
     <v-card
       flat
       tile
       class="black lighten-1 white--text text-center"
+      style="width: 100%"
     >
       <v-card-text>
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
+          v-for="s in social"
+          :key="s.icons"
           class="mx-4 white--text"
           icon
         >
-          <v-icon size="24px">{{ icon }}</v-icon>
+          <a :href="s.to" target="_blank"><v-icon color="white" size="24px">{{ s.icons }}</v-icon></a>
         </v-btn>
       </v-card-text>
-
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </v-card-text>
+      <div class="footer-info">
+        <div class="pt-4 d-flex"><img  src="@/static/images/main-logo.png" alt="logo" /></div>
+        <div>
+          <v-list color="black">
+            <v-list-item class="d-flex justify-center ">
+              <span>MMC GROUP D.O.O. </span>
+            </v-list-item>
+            <v-list-item class="d-flex justify-center">
+              <span>Agencija za privremeno zapošljavanje i <br> posredovanje u zapošljavanju</span>
+            </v-list-item>
+          </v-list>
+        </div>
+        <div>
+          <v-list color="black">
+            <v-list-item style="text-align: right" class="d-flex justify-end">
+              <span>ADRESA: Ul.Josipa Jurja Strossmayera 21, 32000, Vukovar </span>
+            </v-list-item>
+            <v-list-item class="d-flex justify-end">
+              <span>TELEFON: 032 524 119</span>
+            </v-list-item>
+            <v-list-item class="d-flex justify-end">
+              <span>RADNO VRIJEME: pon-pet: 08-16 h</span>
+            </v-list-item>
+          </v-list>
+        </div>
+      </div>
 
       <v-divider></v-divider>
 
@@ -29,6 +54,7 @@
         {{ new Date().getFullYear() }} — <strong>MMC GROUP</strong>
       </v-card-text>
     </v-card>
+    </v-container>
   </v-footer>
 </template>
 
@@ -36,9 +62,13 @@
   export default {
     data(){
       return{
+        social:[
+          {icons:'mdi-facebook', to: 'https://www.facebook.com/MedicalManagementCroatiaGroup'},
+          {icons:'mdi-linkedin', to: 'https://www.facebook.com/MedicalManagementCroatiaGroup'},
+          {icons:'mdi-instagram', to: 'https://www.facebook.com/MedicalManagementCroatiaGroup'}
+        ],
         icons: [
           'mdi-facebook',
-          'mdi-twitter',
           'mdi-linkedin',
           'mdi-instagram',
         ],
@@ -46,3 +76,17 @@
   }
   }
 </script>
+
+<style lang="scss">
+  .footer-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: end;
+    & img {
+      max-height: 100px;
+      width: auto;
+      border-radius: 10px;
+    }
+  }
+</style>
