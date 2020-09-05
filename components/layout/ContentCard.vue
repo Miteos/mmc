@@ -7,6 +7,7 @@
 <style lang="scss">
   .content-card{
     display: flex !important;
+    flex-direction: column;
     margin: 80px 0;
     width: 100%;
     background-color: rgb(255 255 255);

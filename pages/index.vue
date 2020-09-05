@@ -5,9 +5,10 @@
     </div>
   <v-container >
     <div class="four-box-grid">
-      <v-card v-for="c in cards" class="cards-info" :key="cards.title">
-        <v-icon x-large>{{c.icon}}</v-icon>
-        <h1>{{c.title}}</h1>
+      <v-card v-for="c in cards" class="cards-info" :key="cards.title" :style="{ backgroundImage: `url(${c.icon})` }">
+        <div>
+          <h1>{{c.title}}</h1>
+        </div>
       </v-card>
     </div>
   </v-container>
@@ -29,6 +30,15 @@
                 podnositelja zahtjeva za zdravstveni sektor, koji se mogu fleksibilno koristiti i odmah su dostupni .</p>
             </div>
           </div>
+          <div class="text-center py-5" style="font-weight: 400">
+            <h1>Nudimo vam:</h1>
+          </div>
+          <div class="grid-boxes pa-5">
+            <v-card class="card-boxes cards-info pb-5" v-for="comp in companies" :key="comp.title">
+              <v-icon class="pt-5" size="78" color="secondary"> {{comp.icon}}</v-icon>
+              <p class="text-center px-5">{{comp.title}}</p>
+            </v-card>
+          </div>
         </template>
       </content-card>
     </v-container>
@@ -38,6 +48,7 @@
     <v-container>
         <content-card>
           <template #content>
+            <div class="d-flex">
               <div class="text-card-inner">
                 <p>Tražite li novi izazov u Europi i želite profesionalnu podršku od samog početka?</p>
                 <p>Od prvog razgovora za ići na uspješnom s posredovanja, naši stručnjaci su uvijek pri ruci. </p>
@@ -50,14 +61,24 @@
                 <img src="@/static/images/landing/landing1.jpg">
               </div>
             </div>
+            </div>
+            <div class="text-center py-5" style="font-weight: 400">
+              <h1>Nudimo vam:</h1>
+            </div>
+            <div class="grid-boxes pa-5">
+              <v-card class="card-boxes cards-info pb-5" v-for="cand in candidates" :key="cand.title">
+                <v-icon class="pt-5" size="78" color="primary"> {{cand.icon}}</v-icon>
+                <p class="text-center px-5">{{cand.title}}</p>
+              </v-card>
+            </div>
           </template>
         </content-card>
     </v-container>
-    <div class="grey-background">
-      <span>Iskustva korisnika</span>
-    </div>
+<!--    <div class="grey-background">-->
+<!--      <span>Iskustva korisnika</span>-->
+<!--    </div>-->
     <v-container>
-    <slider></slider>
+<!--    <slider></slider>-->
     </v-container>
       <div class="grey-background">
         <span>Kontakt</span>
@@ -81,7 +102,8 @@
                 <v-btn large dark color="primary">
                   <v-icon class="pr-2">
                     mail_outline
-                  </v-icon>             mail@randommail.com
+                  </v-icon>
+                  <a style="color: white" href="mailto:info@mmc-group.hr">info@mmc-group.hr</a>
                 </v-btn>
               </v-list-item>
             </v-list>
@@ -114,6 +136,7 @@
   import ContentCard from '@/components/layout/ContentCard'
   import GoogleMap from '@/components/GoogleMap'
   import Slider from '../components/Slider'
+  import get from 'lodash/get'
 
   export default {
     components:{
@@ -132,11 +155,27 @@
           pauseOnFocus:true
         },
         cards:[
-          {title: 'Tvrtke', icon:'perm_phone_msg'},
-          {title: 'Kandidati', icon:'perm_phone_msg'},
-          {title: 'Iskustva', icon:'perm_phone_msg'},
-          {title: 'Kontakt', icon:'perm_phone_msg'}
+          {title: 'Tvrtke', icon: '/images/landing/landing4.jpg'},
+          {title: 'Kandidati', icon:'/images/landing/landing2.jpg'},
+          {title: 'Iskustva', icon:'/images/landing/landing3.jpg'},
+          {title: 'Kontakt', icon:'/images/landing/landing1.jpg'}
+        ],
+        candidates:[
+          {title: 'Profiliranje', icon: 'mdi-account-search'},
+          {title: 'Odabir radnog mjesta', icon:'mdi-briefcase'},
+          {title: 'Pravne postupke', icon:'mdi-account-supervisor-outline'},
+          {title: 'Registraciju', icon:'mdi-account-plus'},
+          {title: 'Osiguravanje smještaja', icon:'mdi-home-city'},
+          {title: 'Prijevoz', icon:'mdi-car-convertible'},
+          {title: 'Cjelokupnu podršku tijekom boravka izvan matične države.', icon:'mdi-account-search'}
+        ],
+        companies:[
+          {title: 'Posredovanje pri zapošljavanju', icon: 'mdi-handshake'},
+          {title: 'Privremeno zapošljavanje', icon:'mdi-account-hard-hat'},
+          {title: 'Projektni rad', icon:'mdi-alpha-p-box-outline'},
+          {title: 'Savjetovanje.', icon:'mdi-account-question'},
         ]
+
 
       }
     }
@@ -146,6 +185,23 @@
 <style lang="scss">
   @import '@/assets/styles/colors.scss';
 
+  .grid-boxes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+
+
+  }
+.card-boxes{
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  grid-gap: 30px;
+  width: 100%;
+  cursor: default !important;
+
+}
   .four-box-grid{
     display: grid;
     width: 100%;
@@ -228,6 +284,8 @@
     place-items: center;
     border-radius: 10px !important;
     border: 1px solid rgb(244 245 248) !important;
+    background-size: cover;
+    background-position: center;
     box-shadow: none !important;
     background-color: rgb(255 255 255);
     transition:  0.2s ease-in;
