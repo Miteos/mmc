@@ -5,7 +5,8 @@
     </div>
   <v-container >
     <div class="four-box-grid">
-      <v-card v-for="c in cards" class="cards-info" :key="cards.title" :style="{ backgroundImage: `url(${c.icon})` }">
+      <v-card v-for="c in cards" class="cards-info" :key="cards.title">
+<!--        :style="{ backgroundImage: `url(${c.icon})` }"-->
         <div>
           <h1>{{c.title}}</h1>
         </div>
