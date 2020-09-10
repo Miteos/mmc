@@ -7,13 +7,13 @@
       <ul>
         <li v-for="l in cNavContent.links"><nuxt-link :to="l.to">{{l.name}}</nuxt-link></li>
         <li class="mx-3"><a class="mr-0 ml-10 reset-border">{{this.$i18n.locale}}</a>
-          <v-menu class="elevation-0" offset-y left>
+          <v-menu style="box-shadow: none !important;" offset-y left>
             <template v-slot:activator="{ on }">
               <v-icon v-on="on">
                 arrow_drop_down
               </v-icon>
             </template>
-            <v-card  shaped style="min-width: 200px" class="px-1 mt-2 cards-inf">
+            <v-card  shaped style="min-width: 200px" class="px-1 mt-2 elevation-0">
               <v-list flex wrap nav>
                 <v-list-item
                   @click="changeLocale('hr')">
@@ -45,6 +45,7 @@
         links:[
           {name: 'Kontakt', to:'/kontakt'},
           {name: 'O nama', to:'/o-nama'},
+          {name: 'Team', to:'/nas-tim'},
           // {name: 'Documents', to:'/documents'},
           {name: 'Galerija', to:'/galerija'}
         ],
@@ -66,6 +67,7 @@
               links:[
                 {name: t(`Kontakt`, locale), to:'/kontakt'},
                 {name: t(`O nama`, locale), to:'/o-nama'},
+                {name: t(`Team`, locale), to:'/nas-tim'},
                 // {name: 'Documents', to:'/documents'},
                 {name: t(`Galerija`, locale), to:'/galerija'}
               ],
@@ -87,7 +89,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .flags-img{
     max-height: 30px;
 
@@ -177,5 +179,8 @@
   }
   .reset-border:after,.reset-border:before{
     background-color: white !important;
+  }
+  .v-menu__content{
+    box-shadow: none !important;
   }
 </style>
