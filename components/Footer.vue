@@ -18,7 +18,7 @@
           class="mx-4 white--text"
           icon
         >
-          <a :href="s.to" target="_blank"><v-icon color="white" size="24px">{{ s.icons }}</v-icon></a>
+          <a :href="s.to"  target="_blank"><v-icon color="white" size="24px">{{ s.icons }}</v-icon></a>
         </v-btn>
       </v-card-text>
       <div class="footer-info">
@@ -64,7 +64,7 @@
       return{
         social:[
           {icons:'mdi-facebook', to: 'https://www.facebook.com/MedicalManagementCroatiaGroup'},
-          {icons:'mdi-linkedin', to: 'https://www.facebook.com/MedicalManagementCroatiaGroup'},
+          {icons:'mdi-linkedin', to: 'https://www.linkedin.com/company/mmcgrupa/'},
           {icons:'mdi-instagram', to: 'https://www.facebook.com/MedicalManagementCroatiaGroup'}
         ],
         icons: [

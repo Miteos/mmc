@@ -57,6 +57,38 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    [
+      'nuxt-i18n',
+      {
+        locales: [
+          {
+            code: 'en',
+            name: 'EN',
+            file: 'en.json',
+          },
+          {
+            code: 'hr',
+            name: 'HRV',
+            file: 'hr.json',
+          },
+          {
+            code: 'de',
+            name: 'DE',
+            file: 'de.json',
+          },
+        ],
+        detectBrowserLanguage: {
+          useCookie: true,
+          alwaysRedirect: true,
+          cookieKey: 'i18n_redirected',
+        },
+        lazy: true,
+        langDir: 'locales/',
+        strategy: 'no_prefix',
+        defaultLocale: 'hr',
+        parsePages: true,
+      },
+    ],
   ],
   /*
    ** Axios module configuration

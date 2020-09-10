@@ -22,12 +22,12 @@
               <div class="img-card-inner">
                 <img src="@/static/images/landing/landing3.jpg">
               </div>
-            <div class="text-card-inner">
-              <p>Nudimo vam učinkovita rješenja za sva kadrovska pitanja i upravljanje kadrovima. Sa svojom stručnošću u medicinskom i skrbničkom sektoru , pioniri smo u svojoj industriji.</p>
-              <p>Uz Certifikat Licece , mi smo prvi i za sada jedina agencija za zapošljavanje u Hrvatskoj sa službenom agencijskom licencom . </p>
-               <p> Zahvaljujući sofisticiranim mrežama u cijeloj Europi,
+            <div class="text-card-inner" style="padding-left: 50px">
+              <p>Nudimo Vam učinkovite odgovore i rješenja za sva kadrovska pitanja i upravljanje kadrovima, Zahvaljujući našoj stručnosti u medicinskom i skrbničkom sektoru, pioniri smo u svojoj industriji.</p>
+              <p> Zahvaljujući sofisticiranim mrežama u cijeloj Europi,
                 naša baza podataka trenutno sadrži preko 60000 odgovarajućih profila
                 podnositelja zahtjeva za zdravstveni sektor, koji se mogu fleksibilno koristiti i odmah su dostupni .</p>
+              <p>Uz Certifikat Licece , mi smo prvi i za sada jedina agencija za zapošljavanje u Hrvatskoj sa službenom agencijskom licencom . </p>
             </div>
           </div>
           <div class="text-center py-5" style="font-weight: 400">
@@ -48,19 +48,53 @@
     <v-container>
         <content-card>
           <template #content>
-            <div class="d-flex">
-              <div class="text-card-inner">
-                <p>Tražite li novi izazov u Europi i želite profesionalnu podršku od samog početka?</p>
-                <p>Od prvog razgovora za ići na uspješnom s posredovanja, naši stručnjaci su uvijek pri ruci. </p>
-                  <p>Uz našu sveobuhvatnu podršku ,
-                  pratimo vas na putu do posla iz snova u najpoznatijim klinikama i institucijama u Europi.</p>
-                <p>Pozovite nas da stvorimo smislen profil s našim stručnjacima.</p>
+            <div class="d-flex my-10">
+              <div class="text-card-inner" >
+                <p class="ma-0">Tražite li novi izazov u Europi i želite profesionalnu podršku od samog početka?</p>
+                <p class="ma-0">Od prvog razgovora do uspješnog zaposlenja i života u inozemstvu, naši stručnjaci pružit će Vam sveobuhvatnu potporu koja uključuje:</p>
+                <ul class="mb-2" style="margin-right: auto; padding-left: 30px">
+                  <li v-for="list in candidates">{{list.title}}</li>
+                </ul>
+                 <p>Obratite nam se da zajedno realiziramo Vaš put do snova!</p>
               </div>
             <div class="card-inner">
               <div class="img-card-inner">
                 <img src="@/static/images/landing/landing1.jpg">
               </div>
             </div>
+            </div>
+            <div class="card-inner my-10">
+              <div class="img-card-inner">
+                <img src="@/static/images/landing/landing2.jpg">
+              </div>
+              <div class="text-card-inner" style="padding-left: 50px">
+                <h2>Liječnice/i i medicinske sestre/medicinski tehničari</h2>
+                <p>Zdravstvenim djelatnicima nudimo rad u prestižnim klinikama, bolnicama i drugim institucijama u Europi. Osiguravamo siguran posao,
+                  uz kojeg dolaze izvrsna primanja, povoljna radna okolina i mnogobrojne mogućnosti napredovanja. </p>
+                <p> Pozivamo Vas da usavršite svoju stručnost u novom stimulativnom radnom okruženju.</p>
+              </div>
+            </div>
+            <div class="d-flex my-10">
+              <div class="text-card-inner">
+                <h2>Njegovateljice/Njegovatelji</h2>
+                <p>Nudimo mogućnost zaposlenja u privatnim i državnim domovima u kojima su smještene osobe kojima je neophodna osobna njega u svakodnevnom životu.</p>
+                <p>Pružite svoju stručnu pomoć starim, nemoćnim i invalidnim osobama u radnoj okolini koja Vam osigurava poticajna primanja i ugodnu radnu atmosferu.</p>
+              </div>
+              <div class="card-inner">
+                <div class="img-card-inner">
+                  <img src="@/static/images/landing/landing5.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="card-inner my-10">
+              <div class="img-card-inner">
+                <img src="@/static/images/landing/landing6.jpg">
+              </div>
+              <div class="text-card-inner" style="padding-left: 50px">
+                <h2>Ostala zanimanja</h2>
+                <p>Svim kadrovima, od visoko obrazovanih do djelatnika srednje stručne spreme, omogućavamo sigurno i adekvatno zaposlenje u inozemstvu.
+                  Prezentirajte nam svoje potencijale i stručnost, a mi ćemo Vam ponuditi najpoželjnija i najatraktivnija radna mjesta! </p>
+              </div>
             </div>
             <div class="text-center py-5" style="font-weight: 400">
               <h1>Nudimo vam:</h1>
@@ -74,61 +108,16 @@
           </template>
         </content-card>
     </v-container>
-<!--    <div class="grey-background">-->
-<!--      <span>Iskustva korisnika</span>-->
-<!--    </div>-->
-    <v-container>
-<!--    <slider></slider>-->
-    </v-container>
-      <div class="grey-background">
-        <span>Kontakt</span>
-      </div>
-      <v-container>
-        <v-card class="rounded elevation-0">
-          <div class="contact_info ">
-            <v-list class="" >
-              <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Kontakt</v-list-item-title>
-              <v-list-item class="pt-5 pb-4"><span>Kontakt broj</span></v-list-item>
-              <v-list-item>
-                <v-btn large dark color="primary">
-                  <v-icon class="pr-2">
-                    perm_phone_msg
-                  </v-icon>
-                  032 524 119
-                </v-btn>
-              </v-list-item>
-              <v-list-item class="pt-8 pb-4"><span>Kontakt e-mail</span></v-list-item>
-              <v-list-item>
-                <v-btn large dark color="primary">
-                  <v-icon class="pr-2">
-                    mail_outline
-                  </v-icon>
-                  <a style="color: white" href="mailto:info@mmc-group.hr">info@mmc-group.hr</a>
-                </v-btn>
-              </v-list-item>
-            </v-list>
-            <v-list class="">
-              <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Adresa</v-list-item-title>
-              <v-list class="">
-                <v-list-item class="pt-4 ">
-                  <span>Ul.Josipa Jurja Strossmayera 21 </span>
-                </v-list-item>
-                <v-list-item>
-                  <span>32000, Vukovar </span>
-                </v-list-item>
-                <v-list-item>
-                  <span>Hrvatska </span>
-                </v-list-item>
-              </v-list>
-            </v-list>
-            <v-list class="" style="width: 100%">
-              <v-list-item>
-                <google-map></google-map>
-              </v-list-item>
-            </v-list>
-          </div>
-        </v-card>
-      </v-container>
+    <div class="grey-background pb-0">
+      <span>Iskustva korisnika</span>
+    </div>
+   <div class="grey-background ma-0 pa-0">
+    <slider></slider>
+   </div>
+    <div class="grey-background" style="background-color: white !important;">
+      <span>Kontakt</span>
+    </div>
+      <contact-info></contact-info>
     </div>
 </template>
 
@@ -136,13 +125,15 @@
   import ContentCard from '@/components/layout/ContentCard'
   import GoogleMap from '@/components/GoogleMap'
   import Slider from '../components/Slider'
+  import ContactInfo from '../components/layout/ContactInfo'
   import get from 'lodash/get'
 
   export default {
     components:{
       'content-card':ContentCard,
       'google-map': GoogleMap,
-     Slider
+     Slider,
+      ContactInfo
     },
     data(){
       return{
@@ -200,6 +191,10 @@
   grid-gap: 30px;
   width: 100%;
   cursor: default !important;
+  & img {
+    height: 256px;
+    width: auto;
+  }
 
 }
   .four-box-grid{
@@ -238,10 +233,15 @@
     & h1 {
       padding-bottom: 20px;
     }
+    & h2{
+      padding-right: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
     & p {
       padding-bottom: 10px;
       text-align: left;
-      padding-left: 50px;
       padding-right: 20px;
       width: 100%;
       font-size: 18px;

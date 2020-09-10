@@ -5,7 +5,34 @@
         <img src="@/static/images/main-logo.png" alt="logo" />
       </nuxt-link>
       <ul>
-        <li v-for="l in links"><nuxt-link :to="l.to">{{l.name}}</nuxt-link></li>
+        <li v-for="l in cNavContent.links"><nuxt-link :to="l.to">{{l.name}}</nuxt-link></li>
+        <li class="mx-3"><a class="mr-0 ml-10 reset-border">{{this.$i18n.locale}}</a>
+          <v-menu class="elevation-0" offset-y left>
+            <template v-slot:activator="{ on }">
+              <v-icon v-on="on">
+                arrow_drop_down
+              </v-icon>
+            </template>
+            <v-card  shaped style="min-width: 200px" class="px-1 mt-2 cards-inf">
+              <v-list flex wrap nav>
+                <v-list-item
+                  @click="changeLocale('hr')">
+                  <img class="flags-img mx-2 d-flex justify-space between" src="@/static/images/flags/croatia.png">
+                  HRVATSKI
+                </v-list-item>
+                <v-list-item @click="changeLocale('en')">
+                  <img class="flags-img mx-2 d-flex justify-space between" src="@/static/images/flags/english.png">
+                  ENGLISH
+                </v-list-item>
+                <v-list-item
+                  @click="changeLocale('de')">
+                  <img class="flags-img mx-2 d-flex justify-space between" src="@/static/images/flags/germany.png">
+                  DEUTSCH
+                </v-list-item>
+              </v-list>
+            </v-card>
+          </v-menu>
+        </li>
       </ul>
     </nav>
   </div>
@@ -16,17 +43,57 @@
     data(){
       return{
         links:[
-          {name: 'Contact us', to:'/contact-us'},
-          {name: 'About us', to:'/about-us'},
-          {name: 'Documents', to:'/documents'},
-          {name: 'Gallery', to:'/gallery'}
-        ]
+          {name: 'Kontakt', to:'/kontakt'},
+          {name: 'O nama', to:'/o-nama'},
+          // {name: 'Documents', to:'/documents'},
+          {name: 'Galerija', to:'/galerija'}
+        ],
+        languages: [
+          {lang: 'ENG', to: "switchLocalePath('en')"},
+          {lang: 'DE', to: "switchLocalePath('de')"},
+          {lang: 'HRV', to: "switchLocalePath('hr')"},
+        ],
+      }
+    },
+    computed:{
+      availableLocales() {
+        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+      },
+          cNavContent(){
+            const locale = this.$i18n.locale
+            const t = this.$t.bind(this)
+            return{
+              links:[
+                {name: t(`Kontakt`, locale), to:'/kontakt'},
+                {name: t(`O nama`, locale), to:'/o-nama'},
+                // {name: 'Documents', to:'/documents'},
+                {name: t(`Galerija`, locale), to:'/galerija'}
+              ],
+              languages: [
+                {lang: 'ENG', to: "switchLocalePath('en')"},
+                {lang: 'DE', to: "switchLocalePath('de')"},
+                {lang: 'HRV', to: "switchLocalePath('hr')"},
+              ],
+            }
+          }
+    },
+    methods: {
+      changeLocale(locale) {
+        this.$i18n.setLocaleCookie(locale)
+        this.$router.push(this.switchLocalePath(locale))
+        this.$router.go(0)
       }
     }
   }
 </script>
 
 <style lang="scss">
+  .flags-img{
+    max-height: 30px;
+
+    width: 50px;
+    padding-right: 10px;
+  }
   nav{
     display: flex;
     justify-content: space-between;
@@ -107,5 +174,8 @@
     to{
       transform: translateX(0);
     }
+  }
+  .reset-border:after,.reset-border:before{
+    background-color: white !important;
   }
 </style>
