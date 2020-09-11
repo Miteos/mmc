@@ -5,7 +5,7 @@
     </div>
   <v-container >
     <div class="four-box-grid">
-      <v-card v-for="c in cards" class="cards-info" :key="cards.title">
+      <v-card v-for="c in cards" class="cards-info" :key="cards.title" @click="scrollOnClick(c.id)" >
 <!--        :style="{ backgroundImage: `url(${c.icon})` }"-->
         <div>
           <h1>{{c.title}}</h1>
@@ -13,7 +13,7 @@
       </v-card>
     </div>
   </v-container>
-    <div class="grey-background">
+    <div id="tab_1" class="grey-background">
       <span>Tvrtke</span>
     </div>
     <v-container>
@@ -43,7 +43,7 @@
         </template>
       </content-card>
     </v-container>
-    <div class="grey-background">
+    <div id="tab_2" class="grey-background">
       <span>Kandidati</span>
     </div>
     <v-container>
@@ -109,13 +109,13 @@
           </template>
         </content-card>
     </v-container>
-    <div class="grey-background pb-0">
+    <div id="tab_3" class="grey-background pb-0">
       <span>Iskustva korisnika</span>
     </div>
    <div class="grey-background ma-0 pa-0">
     <slider></slider>
    </div>
-    <div class="grey-background" style="background-color: white !important;">
+    <div id="tab_4" class="grey-background" style="background-color: white !important;">
       <span>Kontakt</span>
     </div>
       <contact-info></contact-info>
@@ -144,13 +144,14 @@
           slidesToShow:2,
           slidesToScroll:2,
           autoplay:true,
-          pauseOnFocus:true
+          pauseOnFocus:true,
+          fat:false
         },
         cards:[
-          {title: 'Tvrtke', icon: '/images/landing/landing4.jpg'},
-          {title: 'Kandidati', icon:'/images/landing/landing2.jpg'},
-          {title: 'Iskustva', icon:'/images/landing/landing3.jpg'},
-          {title: 'Kontakt', icon:'/images/landing/landing1.jpg'}
+          {title: 'Tvrtke', icon: '/images/landing/landing4.jpg', id:1},
+          {title: 'Kandidati', icon:'/images/landing/landing2.jpg', id:2},
+          {title: 'Iskustva', icon:'/images/landing/landing3.jpg', id:3},
+          {title: 'Kontakt', icon:'/images/landing/landing1.jpg', id: 4}
         ],
         candidates:[
           {title: 'Profiliranje', icon: 'mdi-account-search'},
@@ -167,9 +168,24 @@
           {title: 'Projektni rad', icon:'mdi-alpha-p-box-outline'},
           {title: 'Savjetovanje.', icon:'mdi-account-question'},
         ]
-
-
       }
+    },
+    methods:{
+      scrollOnClick(value) {
+        if (this.el === value) {
+          this.el = 0
+        } else {
+          this.el = value
+        }
+        setTimeout(() => {
+          const id = `tab_${value}`
+          const yOffset = 0
+          const element = document.getElementById(id)
+          const y =
+            element.getBoundingClientRect().top + window.pageYOffset + yOffset
+          window.scrollTo({top: y, behavior: 'smooth'})
+        }, 200)
+      },
     }
   }
 </script>
