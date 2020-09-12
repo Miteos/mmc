@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div class="img-container">
-      <img class="hero-img" src="@/static/images/hero2.jpg" alt="hero" />
-    </div>
+<!--    <div class="img-container">-->
+<!--      <img class="hero-img" src="@/static/images/hero2.jpg" alt="hero" />-->
+<!--    </div>-->
+    <hero></hero>
   <v-container >
     <div class="four-box-grid">
       <v-card v-for="c in cards" class="cards-info" :key="cards.title" @click="scrollOnClick(c.id)" >
@@ -49,7 +50,7 @@
     <v-container>
         <content-card>
           <template #content>
-            <div class="d-flex my-10">
+            <div class="d-flex card-inner my-10 responsive">
               <div class="text-card-inner" >
                 <p class="ma-0">Tražite li novi izazov u Europi i želite profesionalnu podršku od samog početka?</p>
                 <p class="ma-0">Od prvog razgovora do uspješnog zaposlenja i života u inozemstvu, naši stručnjaci pružit će Vam sveobuhvatnu potporu koja uključuje:</p>
@@ -75,7 +76,7 @@
                 <p> Pozivamo Vas da usavršite svoju stručnost u novom stimulativnom radnom okruženju.</p>
               </div>
             </div>
-            <div class="d-flex my-10">
+            <div class="d-flex my-10 card-inner responsive">
               <div class="text-card-inner">
                 <h2>Njegovateljice/Njegovatelji</h2>
                 <p>Nudimo mogućnost zaposlenja u privatnim i državnim domovima u kojima su smještene osobe kojima je neophodna osobna njega u svakodnevnom životu.</p>
@@ -125,8 +126,9 @@
 <script>
   import ContentCard from '@/components/layout/ContentCard'
   import GoogleMap from '@/components/GoogleMap'
-  import Slider from '../components/Slider'
+  import Slider from '../components/experience'
   import ContactInfo from '../components/layout/ContactInfo'
+  import Hero from '../components/layout/Hero'
   import get from 'lodash/get'
 
   export default {
@@ -134,7 +136,8 @@
       'content-card':ContentCard,
       'google-map': GoogleMap,
      Slider,
-      ContactInfo
+      ContactInfo,
+      Hero
     },
     data(){
       return{
@@ -192,11 +195,26 @@
 
 <style lang="scss">
   @import '@/assets/styles/colors.scss';
+  @import "@/assets/styles/mixins.scss";
 
+  .responsive{
+  @include tablets{
+    flex-direction: column;
+    place-items: center;
+  }
+  }
   .grid-boxes{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
+    @include tablets{
+      grid-template-columns: 1fr 1fr;
+      flex-direction: column;
+      place-items: center;
+    }
+    @include phones{
+      grid-template-columns: 1fr;
+    }
 
 
 
@@ -220,6 +238,13 @@
     grid-gap: 30px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     place-items: center;
+    @include tablets{
+      grid-template-columns: 1fr 1fr;
+    }
+    @include phones{
+      grid-template-columns: 1fr;
+    }
+
   }
   .section-header{
     padding-top: 20px;
@@ -238,6 +263,17 @@
     padding: 20px;
     display: flex;
     flex-direction: row;
+    @include tablets{
+      flex-direction: column;
+      place-items: center;
+      margin: 0 !important;
+      & h2 {
+        padding:20px !important;
+      }
+    }
+    @include phones{
+      padding:0
+    }
   }
   .text-card-inner{
     display: flex;
@@ -247,6 +283,11 @@
     justify-content: center;
     padding: 20px;
     width: 60%;
+    @include tablets{
+      width: 100%;
+      padding:20px;
+      padding-left: 50px;
+    }
     & h1 {
       padding-bottom: 20px;
     }
@@ -255,6 +296,10 @@
       padding-bottom: 20px;
       width: 100%;
       margin-bottom: 40px;
+      @include tablets{
+       text-align: center !important;
+        padding-top: 20px}
+      margin-bottom: 0px;
     }
     & p {
       padding-bottom: 10px;
@@ -262,8 +307,19 @@
       padding-right: 20px;
       width: 100%;
       font-size: 18px;
+      @include tablets{
+        text-align: justify !important;
+        padding-top: 20px
+      }
     }
-
+    @include phones{
+      padding:0 !important;
+    }
+  }
+  .text-card-inner h2{
+    @include tablets{
+      padding-top: 20px;
+    }
   }
   .img-card-inner{
     display: flex;

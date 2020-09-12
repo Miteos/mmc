@@ -36,7 +36,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/styles/globals.scss', '@/assets/styles/colors.scss'],
+  css: [
+    '@/assets/styles/globals.scss',
+    '@/assets/styles/colors.scss',
+    '@/assets/styles/mixins.scss',
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -107,6 +111,7 @@ export default {
         light: {
           primary: '#0092C8',
           secondary: '#77BE43',
+          tertiary: '#f1f1f2',
           accent: '#9c27b0',
         },
       },

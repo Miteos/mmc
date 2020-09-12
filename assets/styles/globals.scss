@@ -1,3 +1,4 @@
+@import "@/assets/styles/mixins.scss";
 *{
   margin: 0;
   padding: 0;
@@ -52,6 +53,7 @@ html{
   font-family: "Roboto Cn", sans-serif;
   color: black;
   background-color: white;
+  overflow-x: hidden;
 }
 
 body {
@@ -63,6 +65,10 @@ body {
   color: #333;
   text-align: left;
   height:100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 a{
   text-decoration: none;
@@ -79,4 +85,7 @@ a{
 }
 .container{
   max-width: 1364px !important;
+  @include highresmonitors{
+    max-width: 100%;
+  }
 }

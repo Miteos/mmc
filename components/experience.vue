@@ -1,15 +1,17 @@
 <template>
   <v-container>
 <div class="carousel">
-  <slider  v-bind="settings">
+  <slider  v-bind="settings" :responsive="settings.responsive">
     <div v-for="items in slidesInfo" class="content-card">
       <div class="card-inner elevation-2">
         <div class="slider-img">
           <img :src="items.image">
         </div>
         <div class="slider-text">
-          <h2>{{items.name}}</h2>
           <p>{{items.comment}}</p>
+          <div>
+            <p style="text-align:end !important;margin-left: auto">{{items.name}}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -30,12 +32,21 @@
     data(){
       return{
         settings: {
-          arrows: true,
+          arrows: false,
           dots: true,
           slidesToShow:2,
           slidesToScroll:2,
-          autoplay:true,
-          pauseOnFocus:true
+          autoplay:false,
+          pauseOnFocus:true,
+          responsive:[
+            {
+              breakpoint:820,
+              settings:{
+                slidesToShow:1,
+                slidesToScroll:1,
+              }
+            }
+          ]
         },
         slidesInfo:[
           {name:'Natalija D.',image:'/images/reviews/user2.jpg', comment:'"Tim me oduševio svojom ljubaznošću i susretljivošću. Sve preporuke!"' },
@@ -51,6 +62,8 @@
 
 <style lang="scss">
   @import '@/assets/styles/colors.scss';
+  @import "@/assets/styles/mixins.scss";
+
   .carousel{
     display: flex;
     margin-top: 30px;
@@ -66,6 +79,17 @@
       border-radius: 10px;
       border: none;
       max-height: none !important;
+      @include phones{
+        width: 100% !important;
+        min-height:350px
+      }
+      & .card-inner {
+        display: flex;
+        @include phones{
+          width: 100% !important;
+          min-height:350px
+        }
+      }
       & .slider-img img{
         position: relative;
         background-repeat: no-repeat;
@@ -73,6 +97,9 @@
         background-size: cover;
         background-position: 100%;
         border-radius: 10px;
+        @include phones{
+          margin:15px;
+        }
       }
     }
   }
@@ -85,6 +112,10 @@
       font-style: italic;
       margin: auto;
       text-align: justify;
+    }
+    @include phones{
+      padding:10px;
+      font-size: 16px;
     }
   }
   .slick-slide {

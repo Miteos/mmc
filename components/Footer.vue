@@ -34,14 +34,14 @@
           </v-list>
         </div>
         <div>
-          <v-list color="black">
-            <v-list-item style="text-align: right" class="d-flex justify-end">
+          <v-list color="black" class="endlist">
+            <v-list-item class="d-flex">
               <span>ADRESA: Ul.Josipa Jurja Strossmayera 21, 32000, Vukovar </span>
             </v-list-item>
-            <v-list-item class="d-flex justify-end">
+            <v-list-item class="d-flex">
               <span>TELEFON: 032 524 119</span>
             </v-list-item>
-            <v-list-item class="d-flex justify-end">
+            <v-list-item class="d-flex">
               <span>RADNO VRIJEME: pon-pet: 08-16 h</span>
             </v-list-item>
           </v-list>
@@ -65,7 +65,7 @@
         social:[
           {icons:'mdi-facebook', to: 'https://www.facebook.com/MedicalManagementCroatiaGroup'},
           {icons:'mdi-linkedin', to: 'https://www.linkedin.com/company/mmcgrupa/'},
-          {icons:'mdi-instagram', to: 'https://www.facebook.com/MedicalManagementCroatiaGroup'}
+          {icons:'mdi-instagram', to: 'https://www.instagram.com/mmcgroup_doo/'}
         ],
         icons: [
           'mdi-facebook',
@@ -78,6 +78,7 @@
 </script>
 
 <style lang="scss">
+  @import "@/assets/styles/mixins.scss";
   .footer-info {
     width: 100%;
     display: grid;
@@ -87,6 +88,24 @@
       max-height: 100px;
       width: auto;
       border-radius: 10px;
+    }
+    @include tablets{
+      grid-template-columns: 1fr;
+      place-items: center;
+    }
+    & .endlist {
+     display: flex;
+      flex-direction: column;
+     text-align: right;
+     justify-content: right ;
+      @include tablets{
+        justify-content: center !important;
+        place-items: center;
+      }
+      & div{
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 </style>

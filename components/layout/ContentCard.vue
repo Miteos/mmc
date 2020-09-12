@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+  @import "@/assets/styles/mixins.scss";
   .content-card{
     display: flex !important;
     flex-direction: column;
@@ -17,6 +18,9 @@
         box-shadow: 0 20px 80px 0 rgba(0,0,0,.05) !important;
         border-radius: 10px;
       }
+    @include tablets {
+      margin: 10px 0;
+    }
   }
 
 </style>
