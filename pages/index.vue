@@ -78,7 +78,7 @@
             </div>
             <div class="d-flex my-10 card-inner responsive">
               <div class="text-card-inner">
-                <h2>Njegovateljice/Njegovatelji</h2>
+                <h2>Njegovateljice / Njegovatelji</h2>
                 <p>Nudimo mogućnost zaposlenja u privatnim i državnim domovima u kojima su smještene osobe kojima je neophodna osobna njega u svakodnevnom životu.</p>
                 <p>Pružite svoju stručnu pomoć starim, nemoćnim i invalidnim osobama u radnoj okolini koja Vam osigurava poticajna primanja i ugodnu radnu atmosferu.</p>
               </div>
@@ -229,6 +229,9 @@
   & img {
     height: 256px;
     width: auto;
+    @include phones {
+      height: 200px;
+    }
   }
 
 }
@@ -272,7 +275,10 @@
       }
     }
     @include phones{
-      padding:0
+      padding:0;
+      & h2 {
+      padding:0px !important;
+    }
     }
   }
   .text-card-inner{
@@ -298,8 +304,13 @@
       margin-bottom: 40px;
       @include tablets{
        text-align: center !important;
-        padding-top: 20px}
-      margin-bottom: 0px;
+        padding-top: 20px;
+        margin-bottom: 0 ;
+      }
+
+      @include phones{
+        padding: 5px !important;
+      }
     }
     & p {
       padding-bottom: 10px;
@@ -311,9 +322,12 @@
         text-align: justify !important;
         padding-top: 20px
       }
+      @include phones{
+        padding: 5px !important;
+      }
     }
     @include phones{
-      padding:0 !important;
+      padding: 0 !important;
     }
   }
   .text-card-inner h2{
@@ -364,6 +378,12 @@
     transition:  0.2s ease-in;
     & h1{
       padding: 20px;
+    }
+    & .v-card__text{
+      @include phones{
+        padding:0 !important;
+        text-align: left;
+      }
     }
   }
   .cards-info:hover{

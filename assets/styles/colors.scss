@@ -1,3 +1,5 @@
+@import "@/assets/styles/mixins.scss";
+
 $mainColor: #0092C8;
 $secondaryColor: #77BE43;
 $tertiaryColor: #f1f1f2;
@@ -8,8 +10,15 @@ $tertiaryColor: #f1f1f2;
   text-align: center;
   padding: 50px 0;
   margin-top: 20px;
+  @include phones{
+    padding: 25px 0;
+  }
   & span{
     text-align: center;
     font-size: 51px;
+    @include tablets{
+      font-size: 26px;
+      padding: 25px 0;
+    }
   }
 }

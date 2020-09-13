@@ -5,8 +5,8 @@
     </div>
     <contact-info></contact-info>
     <v-container>
-      <div class="grid-boxes">
-        <v-card class="card-boxes cards-info pb-5" v-for="i in images" :key="i.image">
+      <div class="grid-boxes" style="">
+        <v-card class="card-boxes cards-info ma-5" style="border: none !important;" v-for="i in images" :key="i.image">
           <img :src="i.image" alt="contact">
         </v-card>
       </div>

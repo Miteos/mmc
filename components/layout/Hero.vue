@@ -86,6 +86,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/styles/mixins.scss";
   .hero-image {
     /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("~static/images/hero/hero2.jpg");*/
     height: 650px;
@@ -103,6 +104,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    & h1{
+      @include phones{
+        font-size: 20px;
+      }
+      @include smallphones{
+        font-size: 21px;
+      }
+    }
   }
   .slide-fade-enter-active {
     opacity: 1;

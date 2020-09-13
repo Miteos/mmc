@@ -67,16 +67,20 @@
       }
       .c1{
         grid-area: 1/1 /span 1 / span 2;
+        padding-left: 20px;
       }
     }
     @include phones {
       grid-template-rows: auto auto auto;
       .c1{
+        width: 100%;
         grid-area: 1 / 1 / span 1/ span 5;
+        padding-left: 5px !important;
       }
       .c2{
         width: 100%;
         grid-area: 2 / 1 / span 1/ span 5;
+        padding-left: 5px;
       }
       .c3{
         width: 100%;

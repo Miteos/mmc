@@ -10,7 +10,7 @@
                     <img :src="items.pics">
          </div>
          <div class="text-card-inne">
-           <h2 class="pb-5">{{items.title}}</h2>
+           <h2 class="pb-5 title-center">{{items.title}}</h2>
            <p>{{items.name}}</p>
            <p>KONTAKT:<a class="px-3" :href="`mailto:${items.mail}`">{{items.mail}}</a></p>
            <p>{{items.city}}</p>
@@ -39,6 +39,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/styles/mixins.scss";
   .slider-img img{
     position: relative;
     background-repeat: no-repeat;
@@ -47,5 +48,13 @@
     background-position: 100%;
     border-radius: 10px;
     margin-right:30px ;
+    @include phones{
+      margin: 10px;
+    }
+  }
+  .title-center{
+    @include phones{
+      text-align: center;
+    }
   }
 </style>

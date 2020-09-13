@@ -31,8 +31,8 @@
      </v-list>
     </v-navigation-drawer>
     <v-app-bar height="100px" class="navigation">
-      <nuxt-link to="/">
-        <img style="max-height: 85px" src="@/static/images/main-logo.png" alt="logo" />
+      <nuxt-link class="logo" to="/">
+        <img class="logo" style="max-height: 85px" src="@/static/images/main-logo.png" alt="logo" />
       </nuxt-link>
       <v-spacer></v-spacer>
       <v-toolbar-items class="navigation-links" v-if="$vuetify.breakpoint.mdAndUp">
@@ -66,7 +66,7 @@
             </v-card>
           </v-menu>
       </v-toolbar-items>
-      <v-app-bar-nav-icon  v-if="$vuetify.breakpoint.mdAndDown" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon  style="font-size: 40px" v-if="$vuetify.breakpoint.mdAndDown" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
 <!--    <nav>-->
 <!--      <nuxt-link to="/">-->
@@ -164,6 +164,12 @@
 <style lang="scss">
   @import '@/assets/styles/colors.scss';
   @import "@/assets/styles/mixins.scss";
+  .logo{
+    max-height: 85px;
+    @include phones{
+      max-height: 70px !important;
+    }
+  }
   .nav-buttons{
     font-size: 18px !important;
     min-width: 100px !important;
@@ -197,6 +203,9 @@
     }
     & .v-toolbar__content{
       width: 100% !important;
+      @include phones{
+      padding-left: 0 !important;
+      }
     }
     @include tablets{
       margin: 0 !important;
@@ -207,8 +216,8 @@
     width: 80%;
     margin: auto;
     background-color: white;
-    @include tablets{
-      width: 100%;
+    @include highresmonitors{
+      width: 100% !important;
       margin: 0;
       display: flex;
       place-items: center;

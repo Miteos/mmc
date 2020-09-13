@@ -15,12 +15,15 @@
 </template>
 
 <style lang="scss">
+  @import "@/assets/styles/mixins.scss";
 .google-map{
   display: block;
   width: 100%;
   height: 400px;
   padding:20px;
-
+  @include phones{
+    padding:0 !important;
+  }
 }
 
 </style>

@@ -6,8 +6,9 @@
     <v-container>
       <v-timeline
         :align-top="alignTop"
-        :dense="dense"
+        :dense="$vuetify.breakpoint.mdAndDown"
         :reverse="reverse"
+        v-if="$vuetify.breakpoint.mdAndUp"
       >
         <v-timeline-item
           v-for="a in aboutContent"
@@ -18,15 +19,16 @@
           :icon-color=" iconColor ? 'primary' : ''"
           :left="left"
           :right="right"
-          :small="small"
+          :small="$vuetify.breakpoint.mdAndDown"
+
         >
           <template v-slot:icon>
             <v-avatar v-if="avatar">
               <img src="http://i.pravatar.cc/64">
             </v-avatar>
           </template>
-          <img class="timeline-img" :src="a.image" slot="opposite">
-          <v-card class="cards-info flex-column pa-5">
+          <img class="timeline-img" :src="a.image" v-if="$vuetify.breakpoint.mdAndUp" slot="opposite">
+          <v-card  class="cards-info flex-column pa-5">
             <v-card-title class="headline">{{a.title}}</v-card-title>
             <v-card-text style="font-size: 16px">
               {{a.text}}
@@ -34,6 +36,14 @@
           </v-card>
         </v-timeline-item>
       </v-timeline>
+
+      <v-card  v-for="a in aboutContent"
+               :key="a.title" v-else class="cards-info flex-column pa-5 mt-5">
+        <v-card-title class="headline">{{a.title}}</v-card-title>
+        <v-card-text style="font-size: 16px">
+          {{a.text}}
+        </v-card-text>
+      </v-card>
     </v-container>
 
   </div>

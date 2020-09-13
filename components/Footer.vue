@@ -99,6 +99,7 @@
      text-align: right;
      justify-content: right ;
       @include tablets{
+        text-align: center !important;
         justify-content: center !important;
         place-items: center;
       }

@@ -5,6 +5,7 @@
        <Nuxt />
     </v-main>
     <v-speed-dial
+      v-if="this.$route.path === '/'"
       v-model="fab"
       fixed
       right
