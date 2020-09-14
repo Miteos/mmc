@@ -21,6 +21,19 @@
     components:{
       ContactInfo
     },
+    head() {
+      return {
+        titleTemplate: `MMC-Group - Kontakt `,
+        title: 'MMC-Group - Kontakt',
+        meta: [
+          {
+            hid: 'Kontakt',
+            name: 'Kontakt',
+            content: 'Kontakt'
+          }
+        ]
+      }
+    },
     data(){
       return{
         images:[

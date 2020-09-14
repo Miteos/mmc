@@ -11,7 +11,7 @@
                 <v-icon class="pr-2">
                   perm_phone_msg
                 </v-icon>
-                032 524 119
+               <a style="color: white" href="tel:+385 032 524 119">032 524 119</a>
               </v-btn>
             </v-list-item>
             <v-list-item class="pt-8 pb-4"><span>Kontakt e-mail</span></v-list-item>

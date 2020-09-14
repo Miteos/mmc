@@ -54,6 +54,19 @@
   export default {
     components:{
     },
+    head() {
+      return {
+        titleTemplate: `MMC-Group - O nama `,
+        title: 'MMC-Group - O nama',
+        meta: [
+          {
+            hid: 'O nama',
+            name: 'O nama',
+            content: 'O nama'
+          }
+        ]
+      }
+    },
     data(){
       return{
         alignTop: false,

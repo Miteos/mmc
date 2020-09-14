@@ -23,6 +23,19 @@
 
 <script>
   export default {
+    head() {
+      return {
+        titleTemplate: `MMC-Group - Team `,
+        title: 'MMC-Group - Team',
+        meta: [
+          {
+            hid: 'Team',
+            name: 'Team',
+            content: 'Team'
+          }
+        ]
+      }
+    },
     data(){
       return{
         teamContent:[

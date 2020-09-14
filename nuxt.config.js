@@ -14,7 +14,8 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: 'MMC-Group',
+    title: 'MMC-Group - Medical Management Croatia Group',
+    titleTemplate: 'MMC Group - Medical Management Croatia Group',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

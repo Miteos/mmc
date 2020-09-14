@@ -45,6 +45,42 @@ import Footer from '@/components/Footer'
     'navbar': NavBar,
     Footer
   },
+    head() {
+      return {
+        titleTemplate: `MMC Group - Medical Management Croatia Group `,
+        meta: [
+          {
+            hid: 'og-title',
+            property: 'og:title',
+            content: 'MMC Group - Medical Management Croatia Group'
+          },
+          {
+            hid: 'og-image',
+            property: 'og:image',
+            content:
+              'http://mmc-group.hr//images/main-logo.png'
+          },
+          {
+            hid: 'og-url',
+            property: 'og:url',
+            content: this.$route.fullPath
+          },
+          {
+            hid: 'og-description',
+            property: 'og:description',
+            content:
+              'Tražite posao u inozemstvu? Naš tim stručnjaka omogućuje Vam siguran posao, smještaj, stimulativna primanja te mogućnosti napretka i daljnjeg usavršavanja.' +
+              'Nudimo Vam učinkovito i stručno zapošljavanje svih kadrova, od visoko obrazovanih do djelatnika srednje stručne spreme.' +
+              'Agencija smo koja pruža mnogobrojne mogućnosti. Obratite nam se s povjerenjem i ostvarite nove poslovne uspjehe!'
+          },
+          {
+            hid: 'og-site_name',
+            property: 'og:site_name',
+            content: 'MMC Group - Medical Management Croatia Group'
+          },
+        ]
+      }
+    },
   data(){
     return{
       fab:false,

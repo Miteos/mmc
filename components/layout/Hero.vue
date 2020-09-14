@@ -39,13 +39,10 @@
           arrows: false,
           dots: false,
           autoplay:true,
-          slidesToShow:1,
+          slidesToShow:2,
           slidesToScroll:1,
-          infinite: false,
-          fade:true,
-          autoplaySpeed: 300,
-          pauseOnHover:false,
-          draggable:false
+          autoplaySpeed: 200,
+          pauseOnFocus:true,
         },
         currentID:0,
         images:[
@@ -95,6 +92,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    @include phones{
+      height: 575px;
+      background-position: 75%;
+      background-repeat: no-repeat;
+    }
+    @include smallphones{
+      height: 400px;
+    }
   }
 
   .hero-text {
@@ -104,12 +109,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    & h1{
-      @include phones{
+    @include phones{
+      width: 90% !important;
+    }
+    & h1 {
+      @include phones {
         font-size: 20px;
       }
-      @include smallphones{
-        font-size: 21px;
+      @include smallphones {
+        font-size: 19px;
       }
     }
   }

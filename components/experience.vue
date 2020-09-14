@@ -9,9 +9,7 @@
         </div>
         <div class="slider-text">
           <p>{{items.comment}}</p>
-          <div>
-            <p style="text-align:end !important;margin-left: auto">{{items.name}}</p>
-          </div>
+          <p style="text-align:right !important;margin-left: auto">{{items.name}}</p>
         </div>
       </div>
     </div>
@@ -36,7 +34,7 @@
           dots: true,
           slidesToShow:2,
           slidesToScroll:2,
-          autoplay:false,
+          autoplay:true,
           pauseOnFocus:true,
           responsive:[
             {
@@ -111,8 +109,12 @@
     & p {
       font-style: italic;
       margin: auto;
-      text-align: justify;
     }
+    & p:last-child{
+    text-align: right;
+      width: 100%;
+      margin: 0;
+  }
     @include phones{
       padding:10px;
       font-size: 16px;

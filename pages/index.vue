@@ -50,11 +50,11 @@
     <v-container>
         <content-card>
           <template #content>
-            <div class="d-flex card-inner my-10 responsive">
+            <div class="d-flex card-inner my-10 responsive reverse">
               <div class="text-card-inner" >
                 <p class="ma-0">Tražite li novi izazov u Europi i želite profesionalnu podršku od samog početka?</p>
                 <p class="ma-0">Od prvog razgovora do uspješnog zaposlenja i života u inozemstvu, naši stručnjaci pružit će Vam sveobuhvatnu potporu koja uključuje:</p>
-                <ul class="mb-2" style="margin-right: auto; padding-left: 30px">
+                <ul class="my-2" style="margin-right: auto; padding-left: 30px">
                   <li v-for="list in candidates">{{list.title}}</li>
                 </ul>
                  <p>Obratite nam se da zajedno realiziramo Vaš put do snova!</p>
@@ -76,7 +76,7 @@
                 <p> Pozivamo Vas da usavršite svoju stručnost u novom stimulativnom radnom okruženju.</p>
               </div>
             </div>
-            <div class="d-flex my-10 card-inner responsive">
+            <div class="d-flex my-10 card-inner responsive reverse">
               <div class="text-card-inner">
                 <h2>Njegovateljice / Njegovatelji</h2>
                 <p>Nudimo mogućnost zaposlenja u privatnim i državnim domovima u kojima su smještene osobe kojima je neophodna osobna njega u svakodnevnom životu.</p>
@@ -197,6 +197,12 @@
   @import '@/assets/styles/colors.scss';
   @import "@/assets/styles/mixins.scss";
 
+  .reverse{
+    @include tablets{
+      flex-direction: column-reverse !important;
+      place-items: center;
+    }
+  }
   .responsive{
   @include tablets{
     flex-direction: column;
@@ -302,10 +308,10 @@
       padding-bottom: 20px;
       width: 100%;
       margin-bottom: 40px;
-      @include tablets{
-       text-align: center !important;
-        padding-top: 20px;
-        margin-bottom: 0 ;
+      @include tablets {
+        text-align: center !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
       }
 
       @include phones{
@@ -337,10 +343,14 @@
   }
   .img-card-inner{
     display: flex;
-    height: 325px;
+    max-height: 325px;
     border-radius: 10px;
+    @include tablets{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
     & img{
-      height: 325px;
+      max-height: 325px;
       width: auto;
       border-radius: 10px;
     }
@@ -376,13 +386,20 @@
     box-shadow: none !important;
     background-color: rgb(255 255 255);
     transition:  0.2s ease-in;
+    @include phones{
+    min-height: 125px;
+      padding:10px 20px}
     & h1{
       padding: 20px;
+      @include phones {
+        font-size: 24px;
+      }
     }
     & .v-card__text{
       @include phones{
         padding:0 !important;
         text-align: left;
+
       }
     }
   }
