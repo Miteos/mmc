@@ -22,7 +22,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content:
+          'Tražite posao u inozemstvu? Naš tim stručnjaka omogućuje Vam siguran posao, smještaj, stimulativna primanja te mogućnosti napretka i daljnjeg usavršavanja.' +
+          'Nudimo Vam učinkovito i stručno zapošljavanje svih kadrova, od visoko obrazovanih do djelatnika srednje stručne spreme.' +
+          'Agencija smo koja pruža mnogobrojne mogućnosti. Obratite nam se s povjerenjem i ostvarite nove poslovne uspjehe!',
       },
     ],
     link: [
