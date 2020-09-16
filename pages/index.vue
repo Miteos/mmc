@@ -4,49 +4,64 @@
 <!--      <img class="hero-img" src="@/static/images/hero2.jpg" alt="hero" />-->
 <!--    </div>-->
     <hero></hero>
+    <v-lazy  :options="{
+          threshold: .5
+        }"
+             transition="fade-transition">
   <v-container >
     <div class="four-box-grid">
       <v-card v-for="c in cards" class="cards-info" :key="cards.title" @click="scrollOnClick(c.id)" >
 <!--        :style="{ backgroundImage: `url(${c.icon})` }"-->
         <div>
-          <h1>{{c.title}}</h1>
+          <h2>{{c.title}}</h2>
         </div>
       </v-card>
     </div>
   </v-container>
-    <div id="tab_1" class="grey-background">
-      <span>Tvrtke</span>
-    </div>
-    <v-container>
-      <content-card>
-        <template #content>
-          <div class="card-inner">
+    </v-lazy>
+
+      <div id="tab_1" class="grey-background">
+        <span>Tvrtke</span>
+      </div>
+    <v-lazy  :options="{
+          threshold: .5
+        }"
+             transition="fade-transition">
+      <v-container>
+        <content-card>
+          <template #content>
+            <div class="card-inner">
               <div class="img-card-inner">
                 <img src="@/static/images/landing/landing3.jpg">
               </div>
-            <div class="text-card-inner" style="padding-left: 50px">
-              <p>Nudimo Vam učinkovite odgovore i rješenja za sva kadrovska pitanja i upravljanje kadrovima, Zahvaljujući našoj stručnosti u medicinskom i skrbničkom sektoru, pioniri smo u svojoj industriji.</p>
-              <p> Zahvaljujući sofisticiranim mrežama u cijeloj Europi,
-                naša baza podataka trenutno sadrži preko 60000 odgovarajućih profila
-                podnositelja zahtjeva za zdravstveni sektor, koji se mogu fleksibilno koristiti i odmah su dostupni .</p>
-              <p>Uz Certifikat Licece , mi smo prvi i za sada jedina agencija za zapošljavanje u Hrvatskoj sa službenom agencijskom licencom . </p>
+              <div class="text-card-inner" style="padding-left: 50px">
+                <p>Nudimo Vam učinkovite odgovore i rješenja za sva kadrovska pitanja i upravljanje kadrovima, Zahvaljujući našoj stručnosti u medicinskom i skrbničkom sektoru, pioniri smo u svojoj industriji.</p>
+                <p> Zahvaljujući sofisticiranim mrežama u cijeloj Europi,
+                  naša baza podataka trenutno sadrži preko 60000 odgovarajućih profila
+                  podnositelja zahtjeva za zdravstveni sektor, koji se mogu fleksibilno koristiti i odmah su dostupni .</p>
+                <p>Uz Certifikat Licence , mi smo prvi i za sada jedina agencija za zapošljavanje u Hrvatskoj sa službenom agencijskom licencom . </p>
+              </div>
             </div>
-          </div>
-          <div class="text-center py-5" style="font-weight: 400">
-            <h1>Nudimo vam:</h1>
-          </div>
-          <div class="grid-boxes pa-5">
-            <v-card class="card-boxes cards-info pb-5" v-for="comp in companies" :key="comp.title">
-              <v-icon class="pt-5" size="78" color="secondary"> {{comp.icon}}</v-icon>
-              <p class="text-center px-5">{{comp.title}}</p>
-            </v-card>
-          </div>
-        </template>
-      </content-card>
-    </v-container>
+            <div class="text-center py-5" style="font-weight: 400">
+              <h2>Nudimo vam:</h2>
+            </div>
+            <div class="grid-boxes pa-5">
+              <v-card class="card-boxes cards-info pb-5" v-for="comp in companies" :key="comp.title">
+                <v-icon class="pt-5" size="78" color="secondary"> {{comp.icon}}</v-icon>
+                <p class="text-center px-5">{{comp.title}}</p>
+              </v-card>
+            </div>
+          </template>
+        </content-card>
+      </v-container>
+    </v-lazy>
     <div id="tab_2" class="grey-background">
       <span>Kandidati</span>
     </div>
+    <v-lazy  :options="{
+          threshold: .5
+        }"
+             transition="fade-transition">
     <v-container>
         <content-card>
           <template #content>
@@ -99,7 +114,7 @@
               </div>
             </div>
             <div class="text-center py-5" style="font-weight: 400">
-              <h1>Nudimo vam:</h1>
+              <h2>Nudimo vam:</h2>
             </div>
             <div class="grid-boxes pa-5">
               <v-card class="card-boxes cards-info pb-5" v-for="cand in candidates" :key="cand.title">
@@ -110,16 +125,27 @@
           </template>
         </content-card>
     </v-container>
+    </v-lazy>
     <div id="tab_3" class="grey-background pb-0">
       <span>Iskustva korisnika</span>
     </div>
+    <v-lazy  :options="{
+          threshold: .5
+        }"
+             transition="fade-transition">
    <div class="grey-background ma-0 pa-0">
     <slider></slider>
    </div>
+    </v-lazy>
     <div id="tab_4" class="grey-background" style="background-color: white !important;">
       <span>Kontakt</span>
     </div>
+    <v-lazy  :options="{
+          threshold: .5
+        }"
+             transition="fade-transition">
       <contact-info></contact-info>
+    </v-lazy>
     </div>
 </template>
 

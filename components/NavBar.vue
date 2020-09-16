@@ -4,6 +4,7 @@
       v-model="drawer"
       fixed
       app
+      disable-resize-watcher
       hide-overlay
       style="top: 100px;"
       width="100%"
@@ -36,73 +37,36 @@
       </nuxt-link>
       <v-spacer></v-spacer>
       <v-toolbar-items class="navigation-links" v-if="$vuetify.breakpoint.mdAndUp">
-        <v-btn active-class="tertiary" elevation="0" color="white" class="nav-buttons" v-for="l in cNavContent.links" :key="l.value" link :to="l.to">
-          {{l.name}}
+        <v-btn active-class="tertiary" elevation="0" color="white" class="nav-buttons" v-for="link in cNavContent.links" :key="link.id" link :to="link.to">
+          {{link.name}}
         </v-btn>
-          <v-menu style="box-shadow: none !important;" offset-y left>
+          <v-menu transition="fab-transition" style="box-shadow: none !important;" offset-y bottom>
             <template v-slot:activator="{ on }">
               <v-btn @click="menu2 = true" text height="72px" class="nav-buttons" v-on="on">
                 {{$i18n.locale}}
-                <v-slide-x-transition v-if="menu2">
                   <v-icon style="padding-left: 6px; padding-bottom: 2px;" small
+                          v-if="menu2"
                   >mdi-chevron-up
                   </v-icon>
-                </v-slide-x-transition>
-                <v-slide-x-transition v-else>
                   <v-icon small style="padding-left: 3px; padding-bottom: 2px;"
+                          v-else
                   >mdi-chevron-down</v-icon
                   >
-                </v-slide-x-transition>
               </v-btn>
             </template>
             <v-card  shaped style="min-width: 200px" class="px-1 mt-2 elevation-0">
               <v-list flex wrap nav>
-                <v-list-item v-for="l in cNavContent.languages" :key="l.value"
-                  @click="changeLocale(l.value)">
-                  <img class="flags-img mx-2 d-flex justify-space between" :src="l.image">
-                  {{l.lang}}
+                <v-list-item v-for="t in cNavContent.languages" :key="t.value"
+                  @click="changeLocale(t.value)">
+                  <img class="flags-img mx-2 d-flex justify-space between" :src="t.image">
+                  {{t.lang}}
                 </v-list-item>
               </v-list>
             </v-card>
           </v-menu>
       </v-toolbar-items>
-      <v-app-bar-nav-icon  style="font-size: 40px" v-if="$vuetify.breakpoint.mdAndDown" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon  style="font-size: 40px" v-if="$vuetify.breakpoint.smAndDown" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
-<!--    <nav>-->
-<!--      <nuxt-link to="/">-->
-<!--        <img src="@/static/images/main-logo.png" alt="logo" />-->
-<!--      </nuxt-link>-->
-<!--      <ul>-->
-<!--        <li v-for="l in cNavContent.links"><nuxt-link :to="l.to">{{l.name}}</nuxt-link></li>-->
-<!--        <li class="mx-3"><a class="mr-0 ml-10 reset-border">{{this.$i18n.locale}}</a>-->
-<!--          <v-menu style="box-shadow: none !important;" offset-y left>-->
-<!--            <template v-slot:activator="{ on }">-->
-<!--              <v-icon v-on="on">-->
-<!--                arrow_drop_down-->
-<!--              </v-icon>-->
-<!--            </template>-->
-<!--            <v-card  shaped style="min-width: 200px" class="px-1 mt-2 elevation-0">-->
-<!--              <v-list flex wrap nav>-->
-<!--                <v-list-item-->
-<!--                  @click="changeLocale('hr')">-->
-<!--                  <img class="flags-img mx-2 d-flex justify-space between" src="@/static/images/flags/croatia.png">-->
-<!--                  HRVATSKI-->
-<!--                </v-list-item>-->
-<!--                <v-list-item @click="changeLocale('en')">-->
-<!--                  <img class="flags-img mx-2 d-flex justify-space between" src="@/static/images/flags/english.png">-->
-<!--                  ENGLISH-->
-<!--                </v-list-item>-->
-<!--                <v-list-item-->
-<!--                  @click="changeLocale('de')">-->
-<!--                  <img class="flags-img mx-2 d-flex justify-space between" src="@/static/images/flags/germany.png">-->
-<!--                  DEUTSCH-->
-<!--                </v-list-item>-->
-<!--              </v-list>-->
-<!--            </v-card>-->
-<!--          </v-menu>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </nav>-->
   </div>
 </template>
 
@@ -116,7 +80,7 @@
         links:[
           {name: 'Kontakt', to:'/kontakt'},
           {name: 'O nama', to:'/o-nama'},
-          {name: 'Team', to:'/nas-tim'},
+          {name: 'Team', to:'/team'},
           // {name: 'Documents', to:'/documents'},
           {name: 'Galerija', to:'/galerija'}
         ],
@@ -136,9 +100,10 @@
             const t = this.$t.bind(this)
             return{
               links:[
-                {name: t(`Kontakt`, locale), to:'/kontakt'},
-                {name: t(`O nama`, locale), to:'/o-nama'},
-                {name: t(`Team`, locale), to:'/nas-tim'},
+                {name: t(`Kontakt`, locale), to:'/kontakt',id:1},
+                {name: t(`O nama`, locale), to:'/o-nama',id:2},
+                {name: t(`Team`, locale), to:'/team',id:3},
+                {name: t(`Prijavi se`, locale), to:'/prijavi-se',id:4},
                 // {name: 'Documents', to:'/documents'},
                 // {name: t(`Galerija`, locale), to:'/galerija'}
               ],
@@ -171,7 +136,7 @@
     }
   }
   .nav-buttons{
-    font-size: 18px !important;
+    font-size: 16px !important;
     min-width: 100px !important;
     padding:10px;
     border: 1px solid $tertiaryColor !important;

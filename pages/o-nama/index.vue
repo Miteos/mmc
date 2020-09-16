@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="grey-background ma-0">
-      <span>O nama</span>
+      <h1>O nama</h1>
     </div>
     <v-container>
       <v-timeline
@@ -87,7 +87,7 @@
               'Oslanjajući se na vlastitu profesionalnost i dugogodišnji rad, prihvatili smo izazov da postanemo vodeća agencija na području zapošljavanja zdravstvenih i drugih djelatnika u Europi tijekom sljedećih nekoliko godina. Da bi zajedno postigli ovaj cilj, okupili smo tim stručnjaka iz područja financija, prava, ekonomije, filozofije i psihologije kako bi osnovali MMC Group d.o.o. u Hrvatskoj. \n',
             image:'/images/about/about1.png'
           } ,
-          {title:'2020.godina',text:'MMC Group d.o.o, punog naziva Medical Management Croatia Group, agenciju koja nudi privremeno zapošljavanje i posredovanje u zapošljavanju, osnovali smo 6. kolovoza 2020. godine u Vukovaru. Osnivanjem agencije u Hrvatskoj, upotpunili smo svoj san međunarodne povezanosti i suradnje. Naša agencija trenutno je jedina agencija za zapošljavanje u Hrvatskoj koja posjeduje Certifikat Licece, odnosno službenu agencijsku licencu.\n' +
+          {title:'2020.godina',text:'MMC Group d.o.o, punog naziva Medical Management Croatia Group, agenciju koja nudi privremeno zapošljavanje i posredovanje u zapošljavanju, osnovali smo 6. kolovoza 2020. godine u Vukovaru. Osnivanjem agencije u Hrvatskoj, upotpunili smo svoj san međunarodne povezanosti i suradnje. Naša agencija trenutno je jedina agencija za zapošljavanje u Hrvatskoj koja posjeduje Certifikat Licence, odnosno službenu agencijsku licencu.\n' +
               'Pružanjem mogućnosti zaposlenja u inozemstvu, cilj nam je hrvatskim i drugim stručnjacima dati potpunu potporu u ostvarivanju novih iskustava i koraka k vlastitom napretku. Ustrajnim radom, zalaganjem i savjetovanjem želimo biti podrška u realizaciji snova.\n',
             image:'images/main-logo.png'
           }

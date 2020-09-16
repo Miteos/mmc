@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="grey-background ma-0">
-      <span>Kontakt</span>
+      <h1>Kontakt</h1>
     </div>
     <contact-info></contact-info>
     <v-container>

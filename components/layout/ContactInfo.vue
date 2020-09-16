@@ -8,7 +8,7 @@
             <v-list-item class="pt-5 pb-4"><span>Kontakt broj</span></v-list-item>
             <v-list-item>
               <v-btn large dark color="primary">
-                <v-icon class="pr-2">
+                <v-icon  class="pr-2">
                   perm_phone_msg
                 </v-icon>
                <a style="color: white" href="tel:+385 032 524 119">032 524 119</a>
@@ -40,7 +40,7 @@
           </v-list>
           <v-list class="c3" style="width: 100%">
             <v-list-item class="pa-0">
-              <google-map></google-map>
+                <google-map></google-map>
             </v-list-item>
           </v-list>
         </div>

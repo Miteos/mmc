@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <slider :v-bind="props">
+  <v-lazy
+    v-model="isActive"
+    :options="{
+          threshold: .5
+        }"
+    transition="fade-transition">
+    <hero-slider ref="slider1" :v-bind="props">
       <div v-for="i in images" :key="i.id">
         <div class="hero-image" :style="{ backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${i.img})` }">
           <div class="hero-text">
@@ -10,19 +15,27 @@
           </div>
         </div>
       </div>
-    </slider>
-<!--    <transition name="slide-fade">-->
-<!--      <div>-->
-<!--      <div class="hero-image" :style="{backgroundImage: 'url(' + images[currentID].img + ')'}" :key="currentID"></div>-->
-<!--      <div class="hero-text">-->
-<!--        <h1>-->
-<!--        </h1>-->
-<!--      </div>-->
-<!--      </div>-->
-<!--    </transition>-->
+    </hero-slider>
+<!--      <transition name="fade">-->
+<!--        <div  v-for="ID in [currentID]" :key="ID">-->
+<!--          <div-->
+<!--            @mouseover="stopRotation"-->
+<!--            @mouseleave="changeImage"-->
+<!--            class="hero-image"-->
+<!--            :style="{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + images[ currentID % images.length].img + ')'-->
+<!--            ,transition:'0.5s ease-in'}" >-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </transition>-->
+<!--        <div class="hero-text">-->
+<!--          <h1> {{images[currentID % images.length].text}}-->
+<!--          </h1>-->
+<!--        </div>-->
+
+
 <!--      <div class="hero-image" :style="{ backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${h.img})` }">-->
 
-    </div>
+    </v-lazy>
 </template>
 
 <script>
@@ -31,7 +44,7 @@
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   export default {
     components:{
-      'slider':VueSlickCarousel
+      'heroSlider':VueSlickCarousel
     },
     data(){
       return{
@@ -45,40 +58,49 @@
           pauseOnFocus:true,
         },
         currentID:0,
+        timer:null,
+        isActive:false,
         images:[
           {
             text:'Tražite posao u inozemstvu? Naš tim stručnjaka omogućuje Vam siguran posao, smještaj, stimulativna primanja te mogućnosti napretka i daljnjeg usavršavanja.',
             img:'/images/hero/hero1.png',
-            id:1
+            id:0
           } ,
           {
             text:'Nudimo Vam učinkovito i stručno zapošljavanje svih kadrova, od visoko obrazovanih do djelatnika srednje stručne spreme.',
             img:'/images/hero/hero2.jpg',
-            id:2
+            id:1
           },
           {
             text:'Agencija smo koja pruža mnogobrojne mogućnosti. Obratite nam se s povjerenjem i ostvarite nove poslovne uspjehe!',
             img:'/images/hero/hero3.jpg',
-            id:3
+            id:2
           }
         ]
       }
     },
-   //  methods:{
-   //    changeImage(){
-   //
-   //       const interval = setInterval(() => this.currentID+=1 , 3000)
-   //       interval
-   //       if(this.currentID ===2){
-   //         clearInterval(interval)
-   //       }
-   //       else {
-   //       }
-   //      }
-   //  },
-   // mounted(){
-   //      this.changeImage()
-   //   }
+    methods: {
+    //      changeImage(){
+    //        this.timer = setInterval(this.next, 3000);
+    //        },
+    //     stopRotation(){
+    //       clearTimeout(this.timer);
+    //       this.timer = null;
+    //     },
+    //     next(){
+    //        this.currentID+=1
+    //     }
+    //
+    //    },
+    //   mounted() {
+    //     this.changeImage()
+    //
+    //   },
+    // computed: {
+    //   currentImage: function() {
+    //     return this.images[Math.abs(this.currentID) % this.images.length];
+    //   }
+    },
   }
 </script>
 
@@ -86,12 +108,13 @@
   @import "@/assets/styles/mixins.scss";
   .hero-image {
     /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("~static/images/hero/hero2.jpg");*/
-    height: 650px;
-    background-position-y: 25%;
-    background-position: top;
+    height: 700px;
+
+    background-position-y: 20%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     position: relative;
+    transition: 0.2s ease-in-out;
     @include phones{
       height: 575px;
       background-position: 75%;
@@ -121,17 +144,15 @@
       }
     }
   }
-  .slide-fade-enter-active {
+  .fade-enter-active, .fade-leave-active {
+    transition: all 0.2s ease;
+    overflow: hidden;
+    visibility: visible;
     opacity: 1;
-    z-index: 10;
+    position: absolute;
   }
-
-  .slide-fade-leave-active {
-    opacity: 1;
-  }
-
-  .slide-fade-enter,
-  .slide-fade-leave-to {
+  .fade-enter, .fade-leave-to {
     opacity: 0;
+    visibility: hidden;
   }
 </style>
