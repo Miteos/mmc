@@ -78,9 +78,9 @@
         menu2:false,
         drawer:false,
         links:[
-          {name: 'Kontakt', to:'/kontakt'},
-          {name: 'O nama', to:'/o-nama'},
-          {name: 'Team', to:'/team'},
+          {name: 'Kontakt', to:'/kontakt/'},
+          {name: 'O nama', to:'/o-nama/'},
+          {name: 'Team', to:'/team/'},
           // {name: 'Documents', to:'/documents'},
           {name: 'Galerija', to:'/galerija'}
         ],
@@ -100,10 +100,10 @@
             const t = this.$t.bind(this)
             return{
               links:[
-                {name: t(`Kontakt`, locale), to:'/kontakt',id:1},
-                {name: t(`O nama`, locale), to:'/o-nama',id:2},
-                {name: t(`Team`, locale), to:'/team',id:3},
-                {name: t(`Prijavi se`, locale), to:'/prijavi-se',id:4},
+                {name: t(`Kontakt`, locale), to:'/kontakt/',id:1},
+                {name: t(`O nama`, locale), to:'/o-nama/',id:2},
+                {name: t(`Team`, locale), to:'/team/',id:3},
+                {name: t(`Prijavi se`, locale), to:'/prijavi-se/',id:4},
                 // {name: 'Documents', to:'/documents'},
                 // {name: t(`Galerija`, locale), to:'/galerija'}
               ],

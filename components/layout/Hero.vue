@@ -112,7 +112,7 @@
 
     background-position-y: 20%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     position: relative;
     transition: 0.2s ease-in-out;
     @include phones{
