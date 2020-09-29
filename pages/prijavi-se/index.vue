@@ -92,8 +92,11 @@
     display: grid!important;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
+    @include tablets{
+      grid-template-columns: 1fr 1fr;
+    }
     @include phones{
-     grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
     & .image-container{
       transition: 0.2s ease-in;
