@@ -91,6 +91,9 @@
   .job-gallery{
     display: grid!important;
     width: 100%;
+    padding-left: 0 !important;
+    place-items: center;
+    grid-gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
     @include tablets{
       grid-template-columns: 1fr 1fr;
@@ -100,6 +103,7 @@
     }
     & .image-container{
       transition: 0.2s ease-in;
+      padding-left: 0 !important;
     }
     & .image-container:hover{
       cursor: pointer;
