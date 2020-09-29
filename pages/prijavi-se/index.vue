@@ -135,13 +135,26 @@
   }
   & div{
     padding-bottom:40px;
+    padding-left: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    @include phones{
+      padding-left: 0;
+
+      & span{
+        text-align: center;
+      }
+    }
+  }
+  @include phones {
+    & h3 {
+      text-align: center;
+    }
   }
   & p{
     max-width: 800px;
-    margin: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     text-align: justify;
     @include smallphones {
       margin-top: 20px;
@@ -156,6 +169,9 @@
     @include smallphones {
       width: 90%;
     }
+   @include phones{
+     margin: auto;
+   }
   }
 }
 </style>
