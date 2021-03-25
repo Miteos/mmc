@@ -37,6 +37,10 @@ export default {
       },
     ],
   },
+  loading: {
+    color: '#0092C8',
+    height: '2px',
+  },
   /*
    ** Global CSS
    */
@@ -49,7 +53,10 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: '~plugins/ga.js', mode: 'client' }],
+  plugins: [
+    '~/plugins/global-helpers',
+    { src: '~plugins/ga.js', mode: 'client' },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -73,6 +80,14 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/toast',
+    [
+      'vue-sweetalert2/nuxt',
+      {
+        confirmButtonColor: '#77BE43',
+        cancelButtonColor: '#ff7674',
+      },
+    ],
     [
       'nuxt-i18n',
       {
@@ -115,6 +130,21 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
+  toast: {
+    position: 'top-right',
+    duration: 3000,
+    theme: 'bubble',
+    register: [
+      // Register custom toasts
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error',
+        },
+      },
+    ],
+  },
   vuetify: {
     theme: {
       dark: false,

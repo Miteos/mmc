@@ -29,20 +29,20 @@
               <span>MMC GROUP D.O.O. </span>
             </v-list-item>
             <v-list-item class="d-flex justify-center">
-              <span>Agencija za privremeno zapošljavanje i <br> posredovanje u zapošljavanju</span>
+              <span>{{$t('Agencija za privremeno zapošljavanje i')}} <br> {{$t('posredovanje u zapošljavanju')}}</span>
             </v-list-item>
           </v-list>
         </div>
         <div>
           <v-list color="black" class="endlist">
             <v-list-item class="d-flex">
-              <span>ADRESA: Ul.Josipa Jurja Strossmayera 21, 32000, Vukovar </span>
+              <span>{{$t('Adresa').toUpperCase()}}: Ul.Josipa Jurja Strossmayera 21, 32000, Vukovar </span>
             </v-list-item>
             <v-list-item class="d-flex">
-              <span>TELEFON: 032 524 119</span>
+              <span>{{$t('Telefon').toUpperCase()}}: 032 524 119</span>
             </v-list-item>
             <v-list-item class="d-flex">
-              <span>RADNO VRIJEME: pon-pet: 08-16 h</span>
+              <span>{{$t('RADNO VRIJEME: pon-pet: 08-16 h')}}</span>
             </v-list-item>
           </v-list>
         </div>

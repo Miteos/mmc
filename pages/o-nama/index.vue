@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="grey-background ma-0">
-      <h1>O nama</h1>
+      <h1>{{$t('O nama')}}</h1>
     </div>
     <v-container>
       <v-timeline
@@ -11,7 +11,7 @@
         v-if="$vuetify.breakpoint.mdAndUp"
       >
         <v-timeline-item
-          v-for="a in aboutContent"
+          v-for="a in cAboutContent.aboutContent"
           :key="a.title"
           :fill-dot="fillDot"
           :hide-dot="hideDot"
@@ -37,7 +37,7 @@
         </v-timeline-item>
       </v-timeline>
 
-      <v-card  v-for="a in aboutContent"
+      <v-card  v-for="a in cAboutContent.aboutContent"
                :key="a.title" v-else class="cards-info flex-column pa-5 mt-5">
         <v-card-title class="headline">{{a.title}}</v-card-title>
         <v-card-text style="font-size: 16px">
@@ -92,6 +92,26 @@
             image:'/images/main-logo.png'
           }
         ]
+      }
+    },
+    computed: {
+      cAboutContent() {
+        const locale = this.$i18n.locale
+        const t = this.$t.bind(this)
+        return{
+          aboutContent:[
+            {
+              title: t('2003. godina',locale),
+              text: t('text_1',locale),
+              image: '/images/about/about1.png'
+            },
+            {
+              title: t('2020.godina',locale),
+              text: t('text_2',locale),
+              image: '/images/main-logo.png'
+            }
+          ]
+        }
       }
     }
   }

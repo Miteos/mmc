@@ -29,7 +29,7 @@
         min-width="200px"
       >
         <v-list nav>
-          <v-list-item v-for="c in cards"  :key="cards.title" @click="scrollOnClick(c.id)">{{c.title}}</v-list-item>
+          <v-list-item v-for="c in cScroll.cards"  :key="cScroll.cards.title" @click="scrollOnClick(c.id)">{{c.title}}</v-list-item>
         </v-list>
       </v-card>
     </v-speed-dial>
@@ -86,15 +86,23 @@ import Footer from '@/components/Footer'
     return{
       fab:false,
       direction:'top',
-      cards:[
-        {title: 'Početak', icon:'/images/landing/landing1.jpg', id:5},
-        {title: 'Tvrtke', icon: '/images/landing/landing4.jpg', id:1},
-        {title: 'Kandidati', icon:'/images/landing/landing2.jpg', id:2},
-        {title: 'Iskustva', icon:'/images/landing/landing3.jpg', id:3},
-        {title: 'Kontakt', icon:'/images/landing/landing1.jpg', id: 4},
-      ],
     }
   },
+    computed:{
+    cScroll(){
+      const locale = this.$i18n.locale
+      const t = this.$t.bind(this)
+      return{
+        cards:[
+          {title: t('Početak',locale), icon:'/images/landing/landing1.jpg', id:5},
+          {title: t('Tvrtke',locale), icon: '/images/landing/landing4.jpg', id:1},
+          {title: t('Kandidati',locale), icon:'/images/landing/landing2.jpg', id:2},
+          {title: t('Iskustva',locale), icon:'/images/landing/landing3.jpg', id:3},
+          {title: t('Kontakt',locale), icon:'/images/landing/landing1.jpg', id: 4},
+        ],
+      }
+    }
+    },
     methods:{
       scrollOnClick(value) {
         if (this.el === value) {

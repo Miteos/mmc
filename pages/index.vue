@@ -10,7 +10,7 @@
              transition="fade-transition">
   <v-container >
     <div class="four-box-grid">
-      <v-card v-for="c in cards" class="cards-info" :key="cards.title" @click="scrollOnClick(c.id)" >
+      <v-card v-for="c in cContent.cards" class="cards-info" :key="cContent.cards.title" @click="scrollOnClick(c.id)" >
 <!--        :style="{ backgroundImage: `url(${c.icon})` }"-->
         <div>
           <h2>{{c.title}}</h2>
@@ -21,7 +21,7 @@
     </v-lazy>
 
       <div id="tab_1" class="grey-background">
-        <span>Tvrtke</span>
+        <span>{{$t('Tvrtke')}}</span>
       </div>
     <v-lazy  :options="{
           threshold: .5
@@ -35,18 +35,16 @@
                 <img src="@/static/images/landing/landing3.jpg">
               </div>
               <div class="text-card-inner" style="padding-left: 50px">
-                <p>Nudimo Vam učinkovite odgovore i rješenja za sva kadrovska pitanja i upravljanje kadrovima, Zahvaljujući našoj stručnosti u medicinskom i skrbničkom sektoru, pioniri smo u svojoj industriji.</p>
-                <p> Zahvaljujući sofisticiranim mrežama u cijeloj Europi,
-                  naša baza podataka trenutno sadrži preko 60000 odgovarajućih profila
-                  podnositelja zahtjeva za zdravstveni sektor, koji se mogu fleksibilno koristiti i odmah su dostupni .</p>
-                <p>Uz Certifikat Licence , mi smo prvi i za sada jedina agencija za zapošljavanje u Hrvatskoj sa službenom agencijskom licencom . </p>
+                <p>{{$t('Nudimo Vam učinkovite odgovore i rješenja za sva kadrovska pitanja i upravljanje kadrovima. Zahvaljujući našoj stručnosti u medicinskom i skrbničkom sektoru, pioniri smo u svojoj industriji')}}.</p>
+                <p>{{$t('Zahvaljujući sofisticiranim mrežama u cijeloj Europi,naša baza podataka trenutno sadrži preko 60000 odgovarajućih profila podnositelja zahtjeva za zdravstveni sektor, koji se mogu fleksibilno koristiti i odmah su dostupni')}}.</p>
+                <p>{{$t('Uz Certifikat Licence, mi smo prvi i za sada jedina agencija za zapošljavanje u Hrvatskoj sa službenom agencijskom licencom')}}.</p>
               </div>
             </div>
             <div class="text-center py-5" style="font-weight: 400">
-              <h2>Nudimo vam:</h2>
+              <h2>{{$t('Nudimo vam')}}:</h2>
             </div>
             <div class="grid-boxes pa-5">
-              <v-card class="card-boxes cards-info pb-5" v-for="comp in companies" :key="comp.title">
+              <v-card class="card-boxes cards-info pb-5" v-for="comp in cContent.companies" :key="comp.title">
                 <v-icon class="pt-5" size="78" color="secondary"> {{comp.icon}}</v-icon>
                 <p class="text-center px-5">{{comp.title}}</p>
               </v-card>
@@ -56,7 +54,7 @@
       </v-container>
     </v-lazy>
     <div id="tab_2" class="grey-background">
-      <span>Kandidati</span>
+      <span>{{$t('Kandidati')}}</span>
     </div>
     <v-lazy  :options="{
           threshold: .5
@@ -67,12 +65,12 @@
           <template #content>
             <div class="d-flex card-inner my-10 responsive reverse">
               <div class="text-card-inner" >
-                <p class="ma-0">Tražite li novi izazov u Europi i želite profesionalnu podršku od samog početka?</p>
-                <p class="ma-0">Od prvog razgovora do uspješnog zaposlenja i života u inozemstvu, naši stručnjaci pružit će Vam sveobuhvatnu potporu koja uključuje:</p>
+                <p class="ma-0">{{$t('Tražite li novi izazov u Europi i želite profesionalnu podršku od samog početka')}}?</p>
+                <p class="ma-0">{{$t('Od prvog razgovora do uspješnog zaposlenja i života u inozemstvu, naši stručnjaci pružit će Vam sveobuhvatnu potporu koja uključuje')}}:</p>
                 <ul class="my-2" style="margin-right: auto; padding-left: 30px">
-                  <li v-for="list in candidates">{{list.title}}</li>
+                  <li v-for="list in cContent.candidates">{{list.title}}</li>
                 </ul>
-                 <p>Obratite nam se da zajedno realiziramo Vaš put do snova!</p>
+                 <p>{{$t('Obratite nam se da zajedno realiziramo Vaš put do snova')}}!</p>
               </div>
             <div class="card-inner">
               <div class="img-card-inner">
@@ -85,17 +83,16 @@
                 <img src="@/static/images/landing/landing2.jpg">
               </div>
               <div class="text-card-inner" style="padding-left: 50px">
-                <h2>Liječnice/i i medicinske sestre/medicinski tehničari</h2>
-                <p>Zdravstvenim djelatnicima nudimo rad u prestižnim klinikama, bolnicama i drugim institucijama u Europi. Osiguravamo siguran posao,
-                  uz kojeg dolaze izvrsna primanja, povoljna radna okolina i mnogobrojne mogućnosti napredovanja. </p>
-                <p> Pozivamo Vas da usavršite svoju stručnost u novom stimulativnom radnom okruženju.</p>
+                <h2>{{$t('Liječnice/i i medicinske sestre/medicinski tehničari')}}</h2>
+                <p>{{$t('Zdravstvenim djelatnicima nudimo rad u prestižnim klinikama, bolnicama i drugim institucijama u Europi. Osiguravamo siguran posao,uz kojeg dolaze izvrsna primanja, povoljna radna okolina i mnogobrojne mogućnosti napredovanja')}}. </p>
+                <p>{{$t('Pozivamo Vas da usavršite svoju stručnost u novom stimulativnom radnom okruženju')}}.</p>
               </div>
             </div>
             <div class="d-flex my-10 card-inner responsive reverse">
               <div class="text-card-inner">
-                <h2>Njegovateljice / Njegovatelji</h2>
-                <p>Nudimo mogućnost zaposlenja u privatnim i državnim domovima u kojima su smještene osobe kojima je neophodna osobna njega u svakodnevnom životu.</p>
-                <p>Pružite svoju stručnu pomoć starim, nemoćnim i invalidnim osobama u radnoj okolini koja Vam osigurava poticajna primanja i ugodnu radnu atmosferu.</p>
+                <h2>{{$t('Njegovateljice / Njegovatelji')}}</h2>
+                <p>{{$t('Nudimo mogućnost zaposlenja u privatnim i državnim domovima u kojima su smještene osobe kojima je neophodna osobna njega u svakodnevnom životu')}}.</p>
+                <p>{{$t('Pružite svoju stručnu pomoć starim, nemoćnim i invalidnim osobama u radnoj okolini koja Vam osigurava poticajna primanja i ugodnu radnu atmosferu')}}.</p>
               </div>
               <div class="card-inner">
                 <div class="img-card-inner">
@@ -108,16 +105,15 @@
                 <img src="@/static/images/landing/landing6.jpg">
               </div>
               <div class="text-card-inner" style="padding-left: 50px">
-                <h2>Ostala zanimanja</h2>
-                <p>Svim kadrovima, od visoko obrazovanih do djelatnika srednje stručne spreme, omogućavamo sigurno i adekvatno zaposlenje u inozemstvu.
-                  Prezentirajte nam svoje potencijale i stručnost, a mi ćemo Vam ponuditi najpoželjnija i najatraktivnija radna mjesta! </p>
+                <h2>{{$t('Ostala zanimanja')}}</h2>
+                <p>{{$t('Svim kadrovima, od visoko obrazovanih do djelatnika srednje stručne spreme, omogućavamo sigurno i adekvatno zaposlenje u inozemstvu. Prezentirajte nam svoje potencijale i stručnost, a mi ćemo Vam ponuditi najpoželjnija i najatraktivnija radna mjesta')}}! </p>
               </div>
             </div>
             <div class="text-center py-5" style="font-weight: 400">
-              <h2>Nudimo vam:</h2>
+              <h2>{{$t('Nudimo vam')}}:</h2>
             </div>
             <div class="grid-boxes pa-5">
-              <v-card class="card-boxes cards-info pb-5" v-for="cand in candidates" :key="cand.title">
+              <v-card class="card-boxes cards-info pb-5" v-for="cand in cContent.candidates" :key="cand.title">
                 <v-icon class="pt-5" size="78" color="primary"> {{cand.icon}}</v-icon>
                 <p class="text-center px-5">{{cand.title}}</p>
               </v-card>
@@ -127,7 +123,7 @@
     </v-container>
     </v-lazy>
     <div id="tab_3" class="grey-background pb-0">
-      <span>Iskustva korisnika</span>
+      <span>{{$t('Iskustva korisnika')}}</span>
     </div>
     <v-lazy  :options="{
           threshold: .5
@@ -138,7 +134,7 @@
    </div>
     </v-lazy>
     <div id="tab_4" class="grey-background" style="background-color: white !important;">
-      <span>Kontakt</span>
+      <span>{{$t('Kontakt')}}</span>
     </div>
     <v-lazy  :options="{
           threshold: .5
@@ -176,27 +172,35 @@
           pauseOnFocus:true,
           fat:false
         },
-        cards:[
-          {title: 'Tvrtke', icon: '/images/landing/landing4.jpg', id:1},
-          {title: 'Kandidati', icon:'/images/landing/landing2.jpg', id:2},
-          {title: 'Iskustva', icon:'/images/landing/landing3.jpg', id:3},
-          {title: 'Kontakt', icon:'/images/landing/landing1.jpg', id: 4}
-        ],
-        candidates:[
-          {title: 'Profiliranje', icon: 'mdi-account-search'},
-          {title: 'Odabir radnog mjesta', icon:'mdi-briefcase'},
-          {title: 'Pravne postupke', icon:'mdi-account-supervisor-outline'},
-          {title: 'Registraciju', icon:'mdi-account-plus'},
-          {title: 'Osiguravanje smještaja', icon:'mdi-home-city'},
-          {title: 'Prijevoz', icon:'mdi-car-convertible'},
-          {title: 'Cjelokupnu podršku tijekom boravka izvan matične države.', icon:'mdi-account-search'}
-        ],
-        companies:[
-          {title: 'Posredovanje pri zapošljavanju', icon: 'mdi-handshake'},
-          {title: 'Privremeno zapošljavanje', icon:'mdi-account-hard-hat'},
-          {title: 'Projektni rad', icon:'mdi-alpha-p-box-outline'},
-          {title: 'Savjetovanje.', icon:'mdi-account-question'},
-        ]
+      }
+    },
+    computed:{
+      cContent(){
+        const locale = this.$i18n.locale
+        const t = this.$t.bind(this)
+        return{
+          cards:[
+            {title: t('Tvrtke',locale), icon: '/images/landing/landing4.jpg', id:1},
+            {title: t('Kandidati',locale), icon:'/images/landing/landing2.jpg', id:2},
+            {title: t('Iskustva',locale), icon:'/images/landing/landing3.jpg', id:3},
+            {title: t('Kontakt',locale), icon:'/images/landing/landing1.jpg', id: 4}
+          ],
+          candidates:[
+            {title:  t('Profiliranje',locale), icon: 'mdi-account-search'},
+            {title:  t('Odabir radnog mjesta',locale), icon:'mdi-briefcase'},
+            {title:  t('Pravne postupke',locale), icon:'mdi-account-supervisor-outline'},
+            {title:  t('Registraciju',locale), icon:'mdi-account-plus'},
+            {title: t('Osiguravanje smještaja',locale), icon:'mdi-home-city'},
+            {title: t('Prijevoz',locale), icon:'mdi-car-convertible'},
+            {title: t('Cjelokupnu podršku tijekom boravka izvan matične države.',locale), icon:'mdi-account-search'}
+          ],
+          companies:[
+            {title:  t('Posredovanje pri zapošljavanju',locale) ,icon: 'mdi-handshake'},
+            {title: t('Privremeno zapošljavanje',locale), icon:'mdi-account-hard-hat'},
+            {title: t('Projektni rad',locale), icon:'mdi-alpha-p-box-outline'},
+            {title: t('Savjetovanje',locale), icon:'mdi-account-question'},
+          ]
+        }
       }
     },
     methods:{

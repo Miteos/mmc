@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="grey-background ma-0">
-      <h1>Prijavi se za posao!</h1>
+      <h1>{{$t('Prijavi se za posao')}}!</h1>
     </div>
     <v-container>
       <v-layout class="d-flex justify-center">
         <content-card class="apply-card">
           <template #content>
-            <h2>Trenutna ponuda poslova</h2>
+            <h2>{{$t('Trenutna ponuda poslova')}}</h2>
             <v-divider style="border-color: rgb(241 241 241) !important" class="pb-10"></v-divider>
             <div class="job-gallery">
               <v-dialog
@@ -34,17 +34,16 @@
       <v-layout class="d-flex justify-center">
         <content-card class="apply-card mt-0">
           <template #content>
-          <h2 >Tražiš posao u inozemstvu?</h2>
+          <h2>{{$t('Tražiš posao u inozemstvu')}}?</h2>
             <v-divider style="border-color: rgb(241 241 241) !important" class="pb-10"></v-divider>
             <div>
-              <h3>MMC Group d.o.o. je tu za Vas!</h3>
-              <p>Obratite nam se s povjerenjem kako bi Vam pomogli pronaći posao iz snova!</p>
-                <span>Kontaktirajte nas i doznajte sve detalje.</span>
-              <p> Na ponuđenom linku dostupan je Obrazac za prijavu, koji se klikom na plavi gumb može skinuti na Vaš uređaj.
-                Ispunjeni obrazac, zajedno sa Vašim životopisom, pošaljite na našu e-mail adresu: <a href="mailto:info@mmc-group.hr">info@mmc-group.hr</a>
-                <br>Za sva pitanja kontaktirajte nas, od ponedjeljka do petka tijekom radnog vremena (08:00 - 16:00) na broj: <br><a href="tel:+38532524119">032 524 119</a></p>
+              <h3>{{$t('MMC Group d.o.o. je tu za Vas')}}!</h3>
+              <p>{{$t('Obratite nam se s povjerenjem kako bi Vam pomogli pronaći posao iz snova')}}!</p>
+                <span>{{$t('Kontaktirajte nas i doznajte sve detalje')}}.</span>
+              <p> {{$t('Na ponuđenom linku dostupan je Obrazac za prijavu, koji se klikom na plavi gumb može skinuti na Vaš uređaj. Ispunjeni obrazac, zajedno sa Vašim životopisom, pošaljite na našu e-mail adresu')}}: <a href="mailto:info@mmc-group.hr">info@mmc-group.hr</a>
+                <br>{{$t('Za sva pitanja kontaktirajte nas, od ponedjeljka do petka tijekom radnog vremena (08:00 - 16:00) na broj')}}: <br><a href="tel:+38532524119">032 524 119</a></p>
               <v-btn  large dark color="primary" class="mobile-responsive">
-                <v-icon  class="pr-2">mdi-arrow-collapse-down</v-icon><a download style="color: white" href="/documents/obrazac-prijava.docx">Obrazac za prijavu</a>
+                <v-icon  class="pr-2">mdi-arrow-collapse-down</v-icon><a download style="color: white" href="/documents/obrazac-prijava.docx">{{$t('Obrazac za prijavu')}}</a>
               </v-btn>
             </div>
           </template>

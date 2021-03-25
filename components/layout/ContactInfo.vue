@@ -4,8 +4,8 @@
       <v-card class="rounded elevation-0">
         <div class="contact_info ">
           <v-list class="c1" >
-            <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Kontakt</v-list-item-title>
-            <v-list-item class="pt-5 pb-4"><span>Kontakt broj</span></v-list-item>
+            <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">{{$t('Kontakt')}}</v-list-item-title>
+            <v-list-item class="pt-5 pb-4"><span>{{$t('Kontakt broj')}}</span></v-list-item>
             <v-list-item>
               <v-btn large dark color="primary">
                 <v-icon  class="pr-2">
@@ -14,7 +14,7 @@
                <a style="color: white" href="tel:+385 032 524 119">032 524 119</a>
               </v-btn>
             </v-list-item>
-            <v-list-item class="pt-8 pb-4"><span>Kontakt e-mail</span></v-list-item>
+            <v-list-item class="pt-8 pb-4"><span>{{$t('Kontakt')}} e-mail</span></v-list-item>
             <v-list-item>
               <v-btn large dark color="primary">
                 <v-icon class="pr-2">
@@ -25,7 +25,7 @@
             </v-list-item>
           </v-list>
           <v-list class="c2">
-            <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">Adresa</v-list-item-title>
+            <v-list-item-title style="font-size: 24px" class="pt-5 pb-4">{{$t('Adresa')}}</v-list-item-title>
             <v-list class="">
               <v-list-item class="pt-4 ">
                 <span>Ul.Josipa Jurja Strossmayera 21 </span>
@@ -34,7 +34,7 @@
                 <span>32000, Vukovar </span>
               </v-list-item>
               <v-list-item>
-                <span>Hrvatska </span>
+                <span>{{$t('Hrvatska')}}</span>
               </v-list-item>
             </v-list>
           </v-list>

@@ -2,7 +2,7 @@
   <v-container>
 <div class="carousel">
   <slider  v-bind="settings" :responsive="settings.responsive">
-    <div v-for="items in slidesInfo" class="content-card">
+    <div v-for="items in cSlidesInfo.slidesInfo" class="content-card" :key="items.comment">
       <div class="card-inner elevation-2">
         <div class="slider-img">
           <img :src="items.image">
@@ -46,15 +46,23 @@
             }
           ]
         },
-        slidesInfo:[
-          {name:'Natalija D.',image:'/images/reviews/user2.jpg', comment:'"Tim me oduševio svojom ljubaznošću i susretljivošću. Sve preporuke!"' },
-          {name:'Ljubica B.',image:'/images/reviews/user4.jpg', comment: '"Zahvalna sam MMC GROUP d.o.o., koja mi je svojom profesionalnošću i odgovornošću pomogla da imam odličan posao u inozemstvu te skladan i dostojan život."' },
-          {name:'Antonio J.',image:'/images/reviews/user3.jpg', comment: '"Agencija nudi širok raspon mogućnosti te sam uz njezinu pomoć napokon pronašao smještaj i stalan posao u Njemačkoj s kojim sam i više nego zadovoljan."' },
-          {name:'Marko F.',image:'/images/reviews/user1.jpg', comment: '"Iz razloga što se cijeli tim svojim velikim zalaganjem trudi odgovoriti na sva Vaša pitanja i savjetovati o najboljem odabiru posla, preporučio bih agenciju svima onima koji se još uvijek dvoume oko odlaska u inozemstvo."' },
-          {name:'Maja I.',image:'/images/reviews/user5.jpg', comment: '"Brzo i jednostavno zaposlenje uz veliku potporu!"' }
-        ]
       }
-    }
+    },
+    computed:{
+      cSlidesInfo(){
+        const locale = this.$i18n.locale
+        const t = this.$t.bind(this)
+        return{
+          slidesInfo:[
+            {name:'Natalija D.',image:'/images/reviews/user2.jpg', comment:t('comment_1',locale) },
+            {name:'Ljubica B.',image:'/images/reviews/user4.jpg', comment: t('comment_2',locale) },
+            {name:'Antonio J.',image:'/images/reviews/user3.jpg', comment: t('comment_3',locale) },
+            {name:'Marko F.',image:'/images/reviews/user1.jpg', comment: t('comment_4',locale) },
+            {name:'Maja I.',image:'/images/reviews/user5.jpg', comment:t('comment_5',locale)}
+          ]
+        }
+      }
+  }
   }
 </script>
 

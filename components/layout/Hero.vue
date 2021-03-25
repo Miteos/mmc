@@ -6,7 +6,7 @@
         }"
     transition="fade-transition">
     <hero-slider ref="slider1" :v-bind="props">
-      <div v-for="i in images" :key="i.id">
+      <div v-for="i in cHero.images" :key="i.id">
         <div class="hero-image" :style="{ backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${i.img})` }">
           <div class="hero-text">
             <h1>
@@ -60,47 +60,71 @@
         currentID:0,
         timer:null,
         isActive:false,
-        images:[
-          {
-            text:'Tražite posao u inozemstvu? Naš tim stručnjaka omogućuje Vam siguran posao, smještaj, stimulativna primanja te mogućnosti napretka i daljnjeg usavršavanja.',
-            img:'/images/hero/hero1.png',
-            id:0
-          } ,
-          {
-            text:'Nudimo Vam učinkovito i stručno zapošljavanje svih kadrova, od visoko obrazovanih do djelatnika srednje stručne spreme.',
-            img:'/images/hero/hero2.jpg',
-            id:1
-          },
-          {
-            text:'Agencija smo koja pruža mnogobrojne mogućnosti. Obratite nam se s povjerenjem i ostvarite nove poslovne uspjehe!',
-            img:'/images/hero/hero3.jpg',
-            id:2
-          }
-        ]
+        // images:[
+        //   {
+        //     text:'Tražite posao u inozemstvu? Naš tim stručnjaka omogućuje Vam siguran posao, smještaj, stimulativna primanja te mogućnosti napretka i daljnjeg usavršavanja.',
+        //     img:'/images/hero/hero1.png',
+        //     id:0
+        //   } ,
+        //   {
+        //     text:'Nudimo Vam učinkovito i stručno zapošljavanje svih kadrova, od visoko obrazovanih do djelatnika srednje stručne spreme.',
+        //     img:'/images/hero/hero2.jpg',
+        //     id:1
+        //   },
+        //   {
+        //     text:'Agencija smo koja pruža mnogobrojne mogućnosti. Obratite nam se s povjerenjem i ostvarite nove poslovne uspjehe!',
+        //     img:'/images/hero/hero3.jpg',
+        //     id:2
+        //   }
+        // ]
       }
     },
     methods: {
-    //      changeImage(){
-    //        this.timer = setInterval(this.next, 3000);
-    //        },
-    //     stopRotation(){
-    //       clearTimeout(this.timer);
-    //       this.timer = null;
-    //     },
-    //     next(){
-    //        this.currentID+=1
-    //     }
-    //
-    //    },
-    //   mounted() {
-    //     this.changeImage()
-    //
-    //   },
-    // computed: {
-    //   currentImage: function() {
-    //     return this.images[Math.abs(this.currentID) % this.images.length];
-    //   }
+      //      changeImage(){
+      //        this.timer = setInterval(this.next, 3000);
+      //        },
+      //     stopRotation(){
+      //       clearTimeout(this.timer);
+      //       this.timer = null;
+      //     },
+      //     next(){
+      //        this.currentID+=1
+      //     }
+      //
+      //    },
+      //   mounted() {
+      //     this.changeImage()
+      //
+      //   },
     },
+    computed: {
+      // currentImage: function() {
+      //   return this.images[Math.abs(this.currentID) % this.images.length];
+      // }
+      cHero(){
+        const locale = this.$i18n.locale
+        const t = this.$t.bind(this)
+        return{
+          images:[
+            {
+              text:t(`hero.hero_1`, locale),
+              img:'/images/hero/hero1.png',
+              id:0
+            } ,
+            {
+              text:t(`hero.hero_2`, locale),
+              img:'/images/hero/hero2.jpg',
+              id:1
+            },
+            {
+              text:t(`hero.hero_3`, locale),
+              img:'/images/hero/hero3.jpg',
+              id:2
+            }
+          ]
+        }
+      }
+    }
   }
 </script>
 

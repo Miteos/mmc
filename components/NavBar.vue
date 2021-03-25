@@ -109,8 +109,8 @@
               ],
               languages: [
                 {lang: 'Hrvatski', image:'/images/flags/croatia.png', value:'hr'},
-                {lang: 'English', image:'images/flags/english.png',value:'en'},
-                {lang: 'Deutsch', image:'images/flags/germany.png',value:'de'},
+                {lang: 'English', image:'/images/flags/english.png',value:'en'},
+                {lang: 'Deutsch', image:'/images/flags/germany.png',value:'de'},
               ],
               locale
             }
