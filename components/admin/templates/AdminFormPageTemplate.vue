@@ -1,7 +1,7 @@
 <template>
   <div v-if="flatPage" class="ma-n5">
     <v-card-title
-      style="border-bottom: 1px solid orange; position: relative;"
+      style="border-bottom: 1px solid #0092C8 ; position: relative;"
       class="py-2"
     >
       {{ title }}
