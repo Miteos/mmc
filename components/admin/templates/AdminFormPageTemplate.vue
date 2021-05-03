@@ -1,7 +1,7 @@
 <template>
   <div v-if="flatPage" class="ma-n5">
     <v-card-title
-      style="border-bottom: 1px solid #0092C8 ; position: relative;"
+      style="border-bottom: 1px solid #0092c8; position: relative;"
       class="py-2"
     >
       {{ title }}
@@ -22,7 +22,7 @@
         <v-col cols="auto">
           <v-btn
             small
-            :color=$vuetify.theme.themes.light.secondary
+            :color="$vuetify.theme.themes.light.secondary"
             rounded
             nuxt
             append
@@ -43,14 +43,15 @@
   <v-dialog
     v-else
     v-model="showDialog"
-    width="700"
+    width="80%"
     persistent
     no-click-animation
     @input="closeDialog"
   >
     <v-card>
       <v-card-title v-text="title" />
-      <v-card-text>
+      <v-divider />
+      <v-card-text class="pt-5">
         <slot />
       </v-card-text>
       <v-card-actions class="justify-end">
@@ -74,34 +75,34 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     returnPath: {
       type: String,
-      required: true
+      required: true,
     },
     flatPage: {
       type: Boolean,
-      default: false
+      default: false,
     },
     confirmDisabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     confirmLoading: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   provide() {
     return {
-      loading: this.isLoading
+      loading: this.isLoading,
     }
   },
   data() {
     return {
       showDialog: false,
-      isLoading: []
+      isLoading: [],
     }
   },
   mounted() {
@@ -113,7 +114,7 @@ export default {
       setTimeout(() => {
         this.$router.push(this.returnPath)
       }, 300)
-    }
-  }
+    },
+  },
 }
 </script>
