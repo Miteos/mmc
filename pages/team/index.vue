@@ -53,13 +53,6 @@ export default {
           pics: '/images/team/toni.jpg',
         },
         {
-          name: 'Sercan Benli',
-          title: 'Direktor',
-          mail: 's.benli@mmc-group.hr',
-          city: 'Ennigerloh, Njemačka',
-          pics: '/images/team/sercan.png',
-        },
-        {
           name: 'Marcel Pähler',
           title: 'Direktor',
           mail: 'm.paehler@mmc-group.hr',
@@ -101,21 +94,14 @@ export default {
             name: 'Antonio Mork',
             title: t('Direktor', locale),
             mail: 'a.mork@mmc-group.hr',
-            city: 'Ennigerloh, ' + t('Njemačka', locale),
+            city: 'Beckum, ' + t('Njemačka', locale),
             pics: '/images/team/toni.jpg',
-          },
-          {
-            name: 'Sercan Benli',
-            title: t('Direktor', locale),
-            mail: 's.benli@mmc-group.hr',
-            city: 'Ennigerloh, ' + t('Njemačka', locale),
-            pics: '/images/team/sercan.png',
           },
           {
             name: 'Marcel Pähler',
             title: t('Direktor', locale),
             mail: 'm.paehler@mmc-group.hr',
-            city: 'Ennigerloh, ' + t('Njemačka', locale),
+            city: 'Beckum, ' + t('Njemačka', locale),
             pics: '/images/team/marcel.png',
           },
           {
