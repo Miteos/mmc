@@ -95,7 +95,7 @@ export default {
             title: t('Direktor', locale),
             mail: 'a.mork@mmc-group.hr',
             city: 'Beckum, ' + t('Njemačka', locale),
-            pics: '/images/team/toni.jpg',
+            pics: '/images/team/toni2.jpeg',
           },
           {
             name: 'Marcel Pähler',
