@@ -45,42 +45,42 @@ export default {
   data() {
     return {
       teamContent: [
-        {
-          name: 'Antonio Mork',
-          title: 'Direktor',
-          mail: 'a.mork@mmc-group.hr',
-          city: 'Ennigerloh, Njemačka',
-          pics: '/images/team/toni.jpg',
-        },
-        {
-          name: 'Marcel Pähler',
-          title: 'Direktor',
-          mail: 'm.paehler@mmc-group.hr',
-          city: 'Ennigerloh, Njemačka',
-          pics: '/images/team/marcel.png',
-        },
-        {
-          name: 'Ana Bradvica, mag. psych',
-          title: 'Voditelj ljudskih potencijala',
-          mail: 'a.bradvica@mmc-group.hr',
-          city: 'Vukovar, Hrvatska',
-          pics: '/images/team/ana.jpg',
-        },
-        {
-          name:
-            'Magdalena Kratofil, univ. bacc. biotechn. et pharm. inv. (student)',
-          title: 'Upravitelj administracije',
-          mail: 'm.kratofil@mmc-group.hr',
-          city: 'Vukovar, Hrvatska',
-          pics: '/images/team/magdalena.jpg',
-        },
-        {
-          name: 'Matej Kapular, univ. bacc. biol. (student)',
-          title: 'IT podrška',
-          mail: 'm.kapular@mmc-group.hr',
-          city: 'Osijek, Hrvatska',
-          pics: '/images/team/ja.jpg',
-        },
+        // {
+        //   name: 'Antonio Mork',
+        //   title: 'Direktor',
+        //   mail: 'a.mork@mmc-group.hr',
+        //   city: 'Ennigerloh, Njemačka',
+        //   pics: '/images/team/toni.jpg',
+        // },
+        // {
+        //   name: 'Marcel Pähler',
+        //   title: 'Direktor',
+        //   mail: 'm.paehler@mmc-group.hr',
+        //   city: 'Ennigerloh, Njemačka',
+        //   pics: '/images/team/marcel.png',
+        // },
+        // {
+        //   name: 'Ana Bradvica, mag. psych',
+        //   title: 'Voditelj ljudskih potencijala',
+        //   mail: 'a.bradvica@mmc-group.hr',
+        //   city: 'Vukovar, Hrvatska',
+        //   pics: '/images/team/ana.jpg',
+        // },
+        // {
+        //   name:
+        //     'Magdalena Kratofil, univ. bacc. biotechn. et pharm. inv. (student)',
+        //   title: 'Upravitelj administracije',
+        //   mail: 'm.kratofil@mmc-group.hr',
+        //   city: 'Vukovar, Hrvatska',
+        //   pics: '/images/team/magdalena.jpg',
+        // },
+        // {
+        //   name: 'Matej Kapular, univ. bacc. biol. (student)',
+        //   title: 'IT podrška',
+        //   mail: 'm.kapular@mmc-group.hr',
+        //   city: 'Osijek, Hrvatska',
+        //   pics: '/images/team/ja.jpg',
+        // },
       ],
     }
   },
